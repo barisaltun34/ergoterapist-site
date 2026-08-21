@@ -3,19 +3,17 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Ergoterapist Cansu Altun | Pek Yakında</title>
+  <title>Ergoterapist Cansu Altun | Pek Yakında 🌸</title>
   
-  <!-- Google Fonts: Syne & Plus Jakarta Sans -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600&family=Syne:wght@700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;600;700&family=Syne:wght@700;800&display=swap" rel="stylesheet">
 
   <style>
     :root {
-      --bg-dark: #0f172a;
-      --accent-gradient: linear-gradient(135deg, #a855f7 0%, #ec4899 50%, #3b82f6 100%);
-      --text-main: #f8fafc;
-      --text-muted: #94a3b8;
+      --bg-dark: #0b0f19;
+      --text-main: #ffffff;
+      --text-body: #f1f5f9;
     }
 
     * {
@@ -36,20 +34,20 @@
       position: relative;
     }
 
-    /* Arka Plan Glow Efektleri */
+    /* Arka Plan Glow Işıkları */
     .glow-1, .glow-2 {
       position: absolute;
       border-radius: 50%;
-      filter: blur(120px);
-      opacity: 0.4;
+      filter: blur(100px);
+      opacity: 0.35;
       z-index: 0;
       animation: pulse 8s ease-in-out infinite alternate;
     }
 
     .glow-1 {
-      width: 400px;
-      height: 400px;
-      background: #a855f7;
+      width: 450px;
+      height: 450px;
+      background: #ec4899;
       top: -100px;
       left: -100px;
     }
@@ -57,27 +55,27 @@
     .glow-2 {
       width: 450px;
       height: 450px;
-      background: #3b82f6;
+      background: #8b5cf6;
       bottom: -100px;
       right: -100px;
       animation-delay: -4s;
     }
 
-    /* Glassmorphism Kart */
+    /* Okunabilirliği Artırılmış Kart Yapısı */
     .container {
       position: relative;
       z-index: 1;
-      max-width: 750px;
+      max-width: 720px;
       width: 90%;
       padding: 3.5rem 2.5rem;
-      background: rgba(30, 41, 59, 0.5);
-      backdrop-filter: blur(20px);
-      -webkit-backdrop-filter: blur(20px);
-      border: 1px solid rgba(255, 255, 255, 0.1);
+      background: rgba(15, 23, 42, 0.88); /* Net okunabilirlik için arka plan koyulaştırıldı */
+      backdrop-filter: blur(25px);
+      -webkit-backdrop-filter: blur(25px);
+      border: 1.5px solid rgba(255, 255, 255, 0.15);
       border-radius: 28px;
-      box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+      box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.8);
       text-align: center;
-      animation: fadeIn 1.2s ease-out;
+      animation: fadeIn 1s ease-out;
     }
 
     /* Rozet */
@@ -85,57 +83,57 @@
       display: inline-flex;
       align-items: center;
       gap: 8px;
-      padding: 8px 18px;
+      padding: 8px 20px;
       border-radius: 100px;
-      background: rgba(168, 85, 247, 0.15);
-      border: 1px solid rgba(168, 85, 247, 0.3);
-      color: #d8b4fe;
-      font-size: 0.85rem;
-      font-weight: 600;
-      letter-spacing: 1px;
-      text-transform: uppercase;
+      background: rgba(244, 114, 182, 0.15);
+      border: 1px solid rgba(244, 114, 182, 0.4);
+      color: #f472b6;
+      font-size: 0.9rem;
+      font-weight: 700;
+      letter-spacing: 0.5px;
       margin-bottom: 2rem;
     }
 
     .badge-dot {
       width: 8px;
       height: 8px;
-      background-color: #ec4899;
+      background-color: #f472b6;
       border-radius: 50%;
-      box-shadow: 0 0 10px #ec4899;
+      box-shadow: 0 0 10px #f472b6;
       animation: blink 1.5s infinite;
     }
 
     /* Başlık */
     h1 {
       font-family: 'Syne', sans-serif;
-      font-size: clamp(2rem, 5vw, 3.2rem);
+      font-size: clamp(2.1rem, 5vw, 3.1rem);
       font-weight: 800;
-      line-height: 1.2;
+      line-height: 1.3;
       margin-bottom: 1.5rem;
-      background: var(--accent-gradient);
+      background: linear-gradient(135deg, #ffffff 10%, #f472b6 60%, #fbcfe8 100%);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
-      letter-spacing: -0.5px;
+      filter: drop-shadow(0 2px 10px rgba(0,0,0,0.5));
     }
 
-    /* Açıklama */
+    /* Açıklama Metni */
     p {
-      font-size: clamp(1rem, 2vw, 1.15rem);
-      color: var(--text-muted);
-      line-height: 1.7;
-      font-weight: 400;
-      max-width: 600px;
+      font-size: clamp(1.05rem, 2vw, 1.2rem);
+      color: var(--text-body);
+      line-height: 1.8;
+      font-weight: 500;
+      max-width: 620px;
       margin: 0 auto 2.5rem auto;
+      text-shadow: 0 1px 2px rgba(0,0,0,0.5);
     }
 
-    /* İmza / Alt Bilgi */
+    /* Alt Başlık / İmza */
     .footer-title {
-      font-size: 0.95rem;
-      font-weight: 600;
-      color: #f1f5f9;
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: #ffffff;
       letter-spacing: 0.5px;
-      border-top: 1px solid rgba(255, 255, 255, 0.08);
+      border-top: 1px solid rgba(255, 255, 255, 0.15);
       padding-top: 1.5rem;
     }
 
@@ -164,18 +162,18 @@
   <main class="container">
     <div class="badge">
       <span class="badge-dot"></span>
-      Yapım Aşamasında
+      🌿 Sürpriz Pek Yakında! ✨
     </div>
     
-    <h1>Dünyanın En İyi Uzman Ergoterapistinin Sayfasına Hoş Geldiniz!</h1>
+    <h1>Dünyanın En İyi Uzman Ergoterapistinin Sayfasına Hoş Geldiniz! 🌸✨</h1>
     
     <p>
-      Sitemiz şu anda sevgi, özen ve büyük bir heyecanla hazırlanıyor. 
-      Çok kısa bir süre içerisinde en güncel çalışmalarımız ve hizmetlerimizle sizlerle birlikte olacağız.
+      Sitemiz şu anda büyük bir sevgi, özen ve heyecanla harika bir dönüşüme hazırlanıyor! 🦋 
+      Çok kısa bir süre içerisinde en tatlı çalışmalarımız ve hizmetlerimizle sizlerle olacağız. 🌿🌻
     </p>
 
     <div class="footer-title">
-      ✨ Ergoterapist Cansu Altun
+      ✨ Uzm. Ergoterapist Cansu Altun 💛🌸
     </div>
   </main>
 
