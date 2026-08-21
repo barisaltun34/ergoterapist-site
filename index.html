@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="tr" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ergoterapist | Kişisel Web Sitesi</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style> body { font-family: 'Plus Jakarta Sans', sans-serif; } </style>
+</head>
+<body class="bg-stone-50 text-stone-800 antialiased">
+
+    <!-- Navigasyon -->
+    <nav class="fixed w-full bg-stone-50/80 backdrop-blur-md z-50 border-b border-stone-200/60">
+        <div class="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
+            <span class="font-semibold text-lg text-emerald-900">Ergoterapist [Ad Soyad]</span>
+            <div class="space-x-6 text-sm font-medium text-stone-600">
+                <a href="#hakkimda" class="hover:text-emerald-700 transition">Hakkımda</a>
+                <a href="#hizmetler" class="hover:text-emerald-700 transition">Hizmetler</a>
+                <a href="#iletisim" class="bg-emerald-700 text-white px-4 py-2 rounded-full hover:bg-emerald-800 transition">Randevu Al</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero / Karşılama -->
+    <section class="pt-32 pb-20 px-6 max-w-6xl mx-auto flex flex-col md:flex-row items-center gap-12">
+        <div class="flex-1 space-y-6">
+            <span class="bg-emerald-100 text-emerald-800 text-xs font-semibold px-3 py-1 rounded-full uppercase tracking-wider">Ergoterapi & Gelişim Support</span>
+            <h1 class="text-4xl md:text-5xl font-bold text-stone-900 leading-tight">
+                Günlük yaşamda bağımsızlık ve <span class="text-emerald-700">potansiyeli keşfetme</span> yolculuğu.
+            </h1>
+            <p class="text-stone-600 text-lg leading-relaxed">
+                Duyu bütünleme, pediatrik ergoterapi ve kişiye özel müdahale planları ile danışanlarımızın hayat kalitesini artırıyoruz.
+            </p>
+            <div class="pt-2 flex gap-4">
+                <a href="https://wa.me/90xxxxxxxxxx" target="_blank" class="bg-emerald-700 text-white px-6 py-3 rounded-xl font-medium shadow-sm hover:bg-emerald-800 transition flex items-center gap-2">
+                    WhatsApp İletişim
+                </a>
+            </div>
+        </div>
+        <div class="flex-1 w-full max-w-md">
+            <div class="aspect-square bg-emerald-100 rounded-3xl overflow-hidden border-4 border-white shadow-lg flex items-center justify-center text-emerald-800">
+                <!-- Profil / Klinik Görseli -->
+                [Uzman Fotoğrafı]
+            </div>
+        </div>
+    </section>
+
+    <!-- Hizmetler -->
+    <section id="hizmetler" class="py-20 bg-stone-100/60 px-6">
+        <div class="max-w-6xl mx-auto">
+            <h2 class="text-2xl md:text-3xl font-bold text-stone-900 mb-12 text-center">Çalışma Alanları</h2>
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="bg-white p-8 rounded-2xl shadow-sm border border-stone-200/50 hover:shadow-md transition">
+                    <div class="w-12 h-12 bg-emerald-50 text-emerald-700 rounded-xl flex items-center justify-center font-bold text-xl mb-6">01</div>
+                    <h3 class="font-bold text-xl mb-3 text-stone-900">Duyu Bütünleme</h3>
+                    <p class="text-stone-600 leading-relaxed text-sm">Çevresel uyaranları işleme ve uyumlu tepkiler geliştirme süreçlerini destekleyen bireysel terapiler.</p>
+                </div>
+                <div class="bg-white p-8 rounded-2xl shadow-sm border border-stone-200/50 hover:shadow-md transition">
+                    <div class="w-12 h-12 bg-amber-50 text-amber-700 rounded-xl flex items-center justify-center font-bold text-xl mb-6">02</div>
+                    <h3 class="font-bold text-xl mb-3 text-stone-900">Pediatrik Ergoterapi</h3>
+                    <p class="text-stone-600 leading-relaxed text-sm">İnce-kaba motor beceriler, öz bakım ve oyun odaklı gelişim takibi.</p>
+                </div>
+                <div class="bg-white p-8 rounded-2xl shadow-sm border border-stone-200/50 hover:shadow-md transition">
+                    <div class="w-12 h-12 bg-emerald-50 text-emerald-700 rounded-xl flex items-center justify-center font-bold text-xl mb-6">03</div>
+                    <h3 class="font-bold text-xl mb-3 text-stone-900">Günlük Yaşam Becerileri</h3>
+                    <p class="text-stone-600 leading-relaxed text-sm">Bireyin ev, okul ve sosyal çevresinde maksimum bağımsızlığa ulaşması için adaptasyon çalışmaları.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+</body>
+</html>
