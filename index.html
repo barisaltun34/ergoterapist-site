@@ -1,213 +1,398 @@
 <!DOCTYPE html>
 <html lang="tr">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0" />
-  <title>Uzm. Ergoterapist Cansu Altun | Pek Yakında 🌸</title>
-  
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;600;700&family=Syne:wght@700;800&display=swap" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Uzm. Ergoterapist Cansu Altun</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
 
-  <style>
-    :root {
-      --bg-dark: #0b0f19;
-      --text-main: #ffffff;
-      --text-body: #f1f5f9;
-    }
+    <style>
+        /* --- GENEL AYARLAR --- */
+        :root {
+            --primary-color: #d4a373; /* Tatlı, sakin bir toprak/karamel tonu */
+            --bg-color: #fefae0;      /* Çok hafif krem/bej arka plan */
+            --text-dark: #333d29;     /* Koyu yeşilimsi siyah (Sade ve şık) */
+            --text-light: #606c38;
+            --white: #ffffff;
+        }
 
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-    body {
-      font-family: 'Plus Jakarta Sans', sans-serif;
-      background-color: var(--bg-dark);
-      color: var(--text-main);
-      min-height: 100vh;
-      min-height: 100dvh; /* Mobil tarayıcı yükseklik uyumu */
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      overflow-x: hidden;
-      position: relative;
-      padding: 1rem;
-    }
+        html {
+            scroll-behavior: smooth; /* Menüye tıklayınca yumuşak kayma */
+        }
 
-    /* Arka Plan Glow Işıkları */
-    .glow-1, .glow-2 {
-      position: absolute;
-      border-radius: 50%;
-      filter: blur(90px);
-      opacity: 0.35;
-      z-index: 0;
-      animation: pulse 8s ease-in-out infinite alternate;
-      pointer-events: none;
-    }
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-dark);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
 
-    .glow-1 {
-      width: 320px;
-      height: 320px;
-      background: #ec4899;
-      top: -50px;
-      left: -50px;
-    }
+        h1, h2, h3, .logo {
+            font-family: 'Playfair Display', serif;
+        }
 
-    .glow-2 {
-      width: 320px;
-      height: 320px;
-      background: #8b5cf6;
-      bottom: -50px;
-      right: -50px;
-      animation-delay: -4s;
-    }
+        /* --- MENÜ (NAVBAR) --- */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background-color: rgba(254, 250, 224, 0.95);
+            backdrop-filter: blur(10px);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1.5rem 5%;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+        }
 
-    /* Kart Yapısı */
-    .container {
-      position: relative;
-      z-index: 1;
-      max-width: 720px;
-      width: 100%;
-      padding: 3.5rem 2.5rem;
-      background: rgba(15, 23, 42, 0.88);
-      backdrop-filter: blur(25px);
-      -webkit-backdrop-filter: blur(25px);
-      border: 1.5px solid rgba(255, 255, 255, 0.15);
-      border-radius: 28px;
-      box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.8);
-      text-align: center;
-      animation: fadeIn 1s ease-out;
-    }
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: var(--primary-color);
+            text-decoration: none;
+            letter-spacing: 1px;
+        }
 
-    /* Rozet */
-    .badge {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      padding: 8px 20px;
-      border-radius: 100px;
-      background: rgba(244, 114, 182, 0.15);
-      border: 1px solid rgba(244, 114, 182, 0.4);
-      color: #f472b6;
-      font-size: 0.9rem;
-      font-weight: 700;
-      letter-spacing: 0.5px;
-      margin-bottom: 2rem;
-    }
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
 
-    .badge-dot {
-      width: 8px;
-      height: 8px;
-      background-color: #f472b6;
-      border-radius: 50%;
-      box-shadow: 0 0 10px #f472b6;
-      animation: blink 1.5s infinite;
-    }
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text-dark);
+            font-weight: 500;
+            font-size: 0.95rem;
+            transition: color 0.3s ease;
+        }
 
-    /* Başlık */
-    h1 {
-      font-family: 'Syne', sans-serif;
-      font-size: clamp(1.75rem, 5.5vw, 3.1rem);
-      font-weight: 800;
-      line-height: 1.3;
-      margin-bottom: 1.5rem;
-      background: linear-gradient(135deg, #ffffff 10%, #f472b6 60%, #fbcfe8 100%);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      filter: drop-shadow(0 2px 10px rgba(0,0,0,0.5));
-    }
+        .nav-links a:hover {
+            color: var(--primary-color);
+        }
 
-    /* Açıklama Metni */
-    p {
-      font-size: clamp(1rem, 3.5vw, 1.2rem);
-      color: var(--text-body);
-      line-height: 1.8;
-      font-weight: 500;
-      max-width: 620px;
-      margin: 0 auto 2.5rem auto;
-      text-shadow: 0 1px 2px rgba(0,0,0,0.5);
-    }
+        /* Mobil Menü Butonu */
+        .hamburger {
+            display: none;
+            cursor: pointer;
+            font-size: 1.5rem;
+            background: none;
+            border: none;
+            color: var(--text-dark);
+        }
 
-    /* Alt Başlık / İmza */
-    .footer-title {
-      font-size: 1.15rem;
-      font-weight: 700;
-      color: #ffffff;
-      letter-spacing: 0.5px;
-      border-top: 1px solid rgba(255, 255, 255, 0.15);
-      padding-top: 1.5rem;
-    }
+        /* --- ANA BÖLÜM (HERO) --- */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 0 5%;
+            background: linear-gradient(to bottom, rgba(254,250,224,1) 0%, rgba(250,237,205,0.5) 100%);
+        }
 
-    /* Mobil Cihazlara Özel Özel İnce Ayarlar */
-    @media (max-width: 600px) {
-      .container {
-        padding: 2.2rem 1.25rem;
-        border-radius: 20px;
-      }
+        .hero-content {
+            max-width: 800px;
+            margin-top: 5rem;
+        }
 
-      .badge {
-        font-size: 0.8rem;
-        padding: 6px 14px;
-        margin-bottom: 1.5rem;
-      }
+        .hero h1 {
+            font-size: clamp(2.5rem, 5vw, 4rem);
+            color: var(--text-dark);
+            margin-bottom: 1rem;
+            line-height: 1.2;
+        }
 
-      p {
-        margin-bottom: 1.8rem;
-      }
+        .hero h1 span {
+            color: var(--primary-color);
+            font-style: italic;
+        }
 
-      .footer-title {
-        font-size: 1rem;
-        padding-top: 1.2rem;
-      }
+        .hero p {
+            font-size: 1.1rem;
+            color: var(--text-light);
+            margin-bottom: 2rem;
+        }
 
-      .glow-1, .glow-2 {
-        width: 220px;
-        height: 220px;
-        filter: blur(60px);
-      }
-    }
+        .btn {
+            display: inline-block;
+            padding: 12px 30px;
+            background-color: var(--primary-color);
+            color: var(--white);
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 500;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
 
-    /* Animasyonlar */
-    @keyframes pulse {
-      0% { transform: scale(1) translate(0, 0); }
-      100% { transform: scale(1.15) translate(20px, -15px); }
-    }
+        .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(212, 163, 115, 0.3);
+        }
 
-    @keyframes blink {
-      0%, 100% { opacity: 1; }
-      50% { opacity: 0.3; }
-    }
+        /* --- BÖLÜM TASARIMLARI (SECTION) --- */
+        section {
+            padding: 5rem 5%;
+        }
 
-    @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(20px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-  </style>
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+            color: var(--text-dark);
+        }
+
+        /* --- HAKKIMDA --- */
+        .about-container {
+            max-width: 900px;
+            margin: 0 auto;
+            text-align: center;
+            background-color: var(--white);
+            padding: 3rem;
+            border-radius: 20px;
+            box-shadow: 0 15px 30px rgba(0,0,0,0.03);
+        }
+
+        /* --- HİZMETLER (KARTLAR) --- */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .service-card {
+            background: var(--white);
+            padding: 2.5rem 2rem;
+            border-radius: 20px;
+            text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.02);
+            border: 1px solid rgba(212, 163, 115, 0.1);
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(212, 163, 115, 0.15);
+        }
+
+        .service-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .service-card h3 {
+            margin-bottom: 1rem;
+            font-size: 1.3rem;
+        }
+
+        .service-card p {
+            font-size: 0.95rem;
+            color: var(--text-light);
+        }
+
+        /* --- İLETİŞİM --- */
+        .contact-container {
+            max-width: 600px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .contact-info {
+            background-color: var(--white);
+            padding: 2rem;
+            border-radius: 20px;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.03);
+        }
+
+        .contact-info p {
+            margin-bottom: 1rem;
+            font-size: 1.1rem;
+        }
+
+        /* --- FOOTER --- */
+        footer {
+            text-align: center;
+            padding: 2rem;
+            background-color: var(--text-dark);
+            color: var(--white);
+            font-size: 0.9rem;
+        }
+
+        /* --- ANİMASYON SINIFLARI (SCROLL REVEAL) --- */
+        .reveal {
+            opacity: 0;
+            transform: translateY(40px);
+            transition: all 0.8s cubic-bezier(0.5, 0, 0, 1);
+        }
+
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* --- MOBİL UYUM --- */
+        @media (max-width: 768px) {
+            .hamburger {
+                display: block;
+            }
+
+            .nav-links {
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                background-color: var(--white);
+                flex-direction: column;
+                align-items: center;
+                padding: 2rem 0;
+                box-shadow: 0 10px 10px rgba(0,0,0,0.05);
+                transform: translateY(-150%);
+                transition: transform 0.3s ease-in-out;
+                z-index: -1;
+            }
+
+            .nav-links.nav-active {
+                transform: translateY(0);
+            }
+
+            .about-container {
+                padding: 2rem 1.5rem;
+            }
+        }
+    </style>
 </head>
 <body>
 
-  <div class="glow-1"></div>
-  <div class="glow-2"></div>
+    <!-- MENÜ -->
+    <nav>
+        <a href="#anasayfa" class="logo">Cansu Altun.</a>
+        <button class="hamburger" id="hamburger-btn">☰</button>
+        <ul class="nav-links" id="nav-links">
+            <li><a href="#anasayfa">Ana Sayfa</a></li>
+            <li><a href="#hakkimda">Hakkımda</a></li>
+            <li><a href="#hizmetler">Hizmetler</a></li>
+            <li><a href="#iletisim">İletişim</a></li>
+        </ul>
+    </nav>
 
-  <main class="container">
-    <div class="badge">
-      <span class="badge-dot"></span>
-      🌿 Pek Yakında! ✨
-    </div>
-    
-    <h1>Dünyanın En İyi Uzman Ergoterapistinin Sayfasına Hoş Geldiniz! 🌸✨</h1>
-    
-    <p>
-      Sitemiz şu anda büyük bir sevgi, özen ve heyecanla harika bir dönüşüme hazırlanıyor! 🦋 
-      Çok kısa bir süre içerisinde en tatlı çalışmalarımız ve hizmetlerimizle sizlerle olacağız. 🌿🌻
-    </p>
+    <!-- ANA SAYFA GİRİŞİ -->
+    <section id="anasayfa" class="hero">
+        <div class="hero-content reveal">
+            <h1>Hayata Anlam Katan <span>Dokunuşlar</span></h1>
+            <p>Uzm. Ergoterapist Cansu Altun ile bağımsız, anlamlı ve kaliteli bir yaşama adım atın. Kişiye özel terapi yaklaşımlarıyla yanınızdayız.</p>
+            <a href="#iletisim" class="btn">Randevu Al</a>
+        </div>
+    </section>
 
-    <div class="footer-title">
-      ✨ Uzm. Ergoterapist Cansu Altun 💛🌸
-    </div>
-  </main>
+    <!-- HAKKIMDA -->
+    <section id="hakkimda">
+        <h2 class="section-title reveal">Hakkımda</h2>
+        <div class="about-container reveal">
+            <p>Merhaba, ben Cansu Altun. Ergoterapi alanındaki uzmanlığımla, çocukların ve yetişkinlerin günlük yaşam aktivitelerinde maksimum bağımsızlığa ulaşmalarını hedefliyorum. Her bireyin biricik olduğuna inanıyor ve terapi programlarımı bu vizyonla, sevgi ve bilimsel temeller ışığında hazırlıyorum.</p>
+            <br>
+            <p>Amacım; sadece beceri kazandırmak değil, bireylerin yaşam kalitesini artırarak hayatı daha neşeli ve yaşanabilir kılmaktır.</p>
+        </div>
+    </section>
 
+    <!-- HİZMETLER -->
+    <section id="hizmetler">
+        <h2 class="section-title reveal">Hizmetlerimiz</h2>
+        <div class="services-grid">
+            <div class="service-card reveal">
+                <div class="service-icon">🧩</div>
+                <h3>Duyu Bütünleme</h3>
+                <p>Çevreden gelen duyusal bilgilerin beyinde işlenmesi ve uygun yanıtların oluşturulması sürecini destekleyici terapiler.</p>
+            </div>
+            
+            <div class="service-card reveal">
+                <div class="service-icon">🧸</div>
+                <h3>Pediatrik Ergoterapi</h3>
+                <p>Çocukların ince motor, kaba motor ve bilişsel becerilerini oyun temelli yaklaşımlarla geliştirme çalışmaları.</p>
+            </div>
+
+            <div class="service-card reveal">
+                <div class="service-icon">🧠</div>
+                <h3>Nörolojik Rehabilitasyon</h3>
+                <p>Nörolojik rahatsızlıklara sahip bireylerin günlük yaşama adaptasyonunu ve bağımsızlıklarını artırma süreci.</p>
+            </div>
+
+            <div class="service-card reveal">
+                <div class="service-icon">🌱</div>
+                <h3>Günlük Yaşam Eğitimi</h3>
+                <p>Öz bakım, iş, okul ve serbest zaman aktivitelerinde bağımsızlığı sağlamaya yönelik kişiselleştirilmiş müdahaleler.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- İLETİŞİM -->
+    <section id="iletisim">
+        <h2 class="section-title reveal">İletişim</h2>
+        <div class="contact-container reveal">
+            <div class="contact-info">
+                <p><strong>📍 Adres:</strong> (Klinik adresi veya şehir bilgisi eklenebilir)</p>
+                <p><strong>📞 Telefon:</strong> +90 555 123 45 67</p>
+                <p><strong>✉️ E-posta:</strong> iletisim@ergoterapistcansualtun.com</p>
+                <p><strong>📸 Instagram:</strong> @ergoterapistcansu</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <p>&copy; 2026 Uzm. Ergoterapist Cansu Altun. Tüm hakları saklıdır.</p>
+    </footer>
+
+    <!-- ANİMASYON VE MOBİL MENÜ SCRİPTİ -->
+    <script>
+        // Mobil Menü Aç/Kapat
+        const hamburgerBtn = document.getElementById('hamburger-btn');
+        const navLinks = document.getElementById('nav-links');
+        const navItems = document.querySelectorAll('.nav-links a');
+
+        hamburgerBtn.addEventListener('click', () => {
+            navLinks.classList.toggle('nav-active');
+        });
+
+        // Mobilde linke tıklayınca menüyü kapatma
+        navItems.forEach(item => {
+            item.addEventListener('click', () => {
+                navLinks.classList.remove('nav-active');
+            });
+        });
+
+        // Sayfa Kaydırıldıkça Beliren Elementler (Scroll Reveal Animasyonu)
+        function reveal() {
+            var reveals = document.querySelectorAll(".reveal");
+            for (var i = 0; i < reveals.length; i++) {
+                var windowHeight = window.innerHeight;
+                var elementTop = reveals[i].getBoundingClientRect().top;
+                var elementVisible = 100; // Elementin ekranda görünmeye başlayacağı piksel sınırı
+                
+                if (elementTop < windowHeight - elementVisible) {
+                    reveals[i].classList.add("active");
+                }
+            }
+        }
+        
+        // Sayfa yüklendiğinde ilk elementleri göster
+        window.addEventListener("load", reveal);
+        // Kaydırıldıkça diğerlerini göster
+        window.addEventListener("scroll", reveal);
+    </script>
 </body>
 </html>
