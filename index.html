@@ -1,243 +1,71 @@
 <!DOCTYPE html>
-<html lang="tr">
+<html lang="tr" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Uzm. Ergoterapist Cansu Altun</title>
+    <title>Uzm. Ergoterapist Cansu Altun | Bütüncül Ergoterapi & Gelişimsel Yaklaşımlar</title>
     
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        sage: {
+                            50: '#F4F7F5',
+                            100: '#E4EBE7',
+                            200: '#C8D7CF',
+                            500: '#5E8170',
+                            600: '#4A6B5B',
+                            700: '#385245',
+                        },
+                        cream: {
+                            50: '#FAF6F0',
+                            100: '#F4EFEA',
+                            200: '#EBE3D8',
+                        },
+                        terracotta: {
+                            500: '#E07A5F',
+                            600: '#C86349',
+                        },
+                        sand: '#D4A373',
+                        charcoal: '#2D3748'
+                    },
+                    fontFamily: {
+                        serif: ['Playfair Display', 'serif'],
+                        sans: ['Plus Jakarta Sans', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
 
     <style>
-        /* --- GENEL AYARLAR --- */
-        :root {
-            --primary-color: #d4a373; /* Tatlı, sakin bir toprak/karamel tonu */
-            --bg-color: #fefae0;      /* Çok hafif krem/bej arka plan */
-            --text-dark: #333d29;     /* Koyu yeşilimsi siyah (Sade ve şık) */
-            --text-light: #606c38;
-            --white: #ffffff;
-        }
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        html {
-            scroll-behavior: smooth; /* Menüye tıklayınca yumuşak kayma */
-        }
-
         body {
-            font-family: 'Poppins', sans-serif;
-            background-color: var(--bg-color);
-            color: var(--text-dark);
-            line-height: 1.6;
-            overflow-x: hidden;
+            background-color: #FAF6F0;
+            color: #2D3748;
+            font-family: 'Plus Jakarta Sans', sans-serif;
         }
 
-        h1, h2, h3, .logo {
-            font-family: 'Playfair Display', serif;
+        /* Glassmorphic Navbar */
+        .glass-nav {
+            background: rgba(250, 246, 240, 0.88);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border-bottom: 1px solid rgba(94, 129, 112, 0.12);
         }
 
-        /* --- MENÜ (NAVBAR) --- */
-        nav {
-            position: fixed;
-            top: 0;
-            width: 100%;
-            background-color: rgba(254, 250, 224, 0.95);
-            backdrop-filter: blur(10px);
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 1.5rem 5%;
-            z-index: 1000;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
-        }
-
-        .logo {
-            font-size: 1.5rem;
-            font-weight: 600;
-            color: var(--primary-color);
-            text-decoration: none;
-            letter-spacing: 1px;
-        }
-
-        .nav-links {
-            display: flex;
-            gap: 2rem;
-            list-style: none;
-        }
-
-        .nav-links a {
-            text-decoration: none;
-            color: var(--text-dark);
-            font-weight: 500;
-            font-size: 0.95rem;
-            transition: color 0.3s ease;
-        }
-
-        .nav-links a:hover {
-            color: var(--primary-color);
-        }
-
-        /* Mobil Menü Butonu */
-        .hamburger {
-            display: none;
-            cursor: pointer;
-            font-size: 1.5rem;
-            background: none;
-            border: none;
-            color: var(--text-dark);
-        }
-
-        /* --- ANA BÖLÜM (HERO) --- */
-        .hero {
-            min-height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            padding: 0 5%;
-            background: linear-gradient(to bottom, rgba(254,250,224,1) 0%, rgba(250,237,205,0.5) 100%);
-        }
-
-        .hero-content {
-            max-width: 800px;
-            margin-top: 5rem;
-        }
-
-        .hero h1 {
-            font-size: clamp(2.5rem, 5vw, 4rem);
-            color: var(--text-dark);
-            margin-bottom: 1rem;
-            line-height: 1.2;
-        }
-
-        .hero h1 span {
-            color: var(--primary-color);
-            font-style: italic;
-        }
-
-        .hero p {
-            font-size: 1.1rem;
-            color: var(--text-light);
-            margin-bottom: 2rem;
-        }
-
-        .btn {
-            display: inline-block;
-            padding: 12px 30px;
-            background-color: var(--primary-color);
-            color: var(--white);
-            text-decoration: none;
-            border-radius: 50px;
-            font-weight: 500;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-
-        .btn:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 10px 20px rgba(212, 163, 115, 0.3);
-        }
-
-        /* --- BÖLÜM TASARIMLARI (SECTION) --- */
-        section {
-            padding: 5rem 5%;
-        }
-
-        .section-title {
-            text-align: center;
-            font-size: 2.5rem;
-            margin-bottom: 3rem;
-            color: var(--text-dark);
-        }
-
-        /* --- HAKKIMDA --- */
-        .about-container {
-            max-width: 900px;
-            margin: 0 auto;
-            text-align: center;
-            background-color: var(--white);
-            padding: 3rem;
-            border-radius: 20px;
-            box-shadow: 0 15px 30px rgba(0,0,0,0.03);
-        }
-
-        /* --- HİZMETLER (KARTLAR) --- */
-        .services-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 2rem;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        .service-card {
-            background: var(--white);
-            padding: 2.5rem 2rem;
-            border-radius: 20px;
-            text-align: center;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            box-shadow: 0 10px 20px rgba(0,0,0,0.02);
-            border: 1px solid rgba(212, 163, 115, 0.1);
-        }
-
-        .service-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 15px 30px rgba(212, 163, 115, 0.15);
-        }
-
-        .service-icon {
-            font-size: 2.5rem;
-            margin-bottom: 1rem;
-        }
-
-        .service-card h3 {
-            margin-bottom: 1rem;
-            font-size: 1.3rem;
-        }
-
-        .service-card p {
-            font-size: 0.95rem;
-            color: var(--text-light);
-        }
-
-        /* --- İLETİŞİM --- */
-        .contact-container {
-            max-width: 600px;
-            margin: 0 auto;
-            text-align: center;
-        }
-
-        .contact-info {
-            background-color: var(--white);
-            padding: 2rem;
-            border-radius: 20px;
-            box-shadow: 0 10px 20px rgba(0,0,0,0.03);
-        }
-
-        .contact-info p {
-            margin-bottom: 1rem;
-            font-size: 1.1rem;
-        }
-
-        /* --- FOOTER --- */
-        footer {
-            text-align: center;
-            padding: 2rem;
-            background-color: var(--text-dark);
-            color: var(--white);
-            font-size: 0.9rem;
-        }
-
-        /* --- ANİMASYON SINIFLARI (SCROLL REVEAL) --- */
+        /* Scroll Reveal Effect */
         .reveal {
             opacity: 0;
-            transform: translateY(40px);
-            transition: all 0.8s cubic-bezier(0.5, 0, 0, 1);
+            transform: translateY(30px);
+            transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
         }
 
         .reveal.active {
@@ -245,154 +73,637 @@
             transform: translateY(0);
         }
 
-        /* --- MOBİL UYUM --- */
-        @media (max-width: 768px) {
-            .hamburger {
-                display: block;
-            }
+        /* Custom Accordion Animation */
+        .accordion-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.4s ease-out, padding 0.3s ease;
+        }
 
-            .nav-links {
-                position: absolute;
-                top: 100%;
-                left: 0;
-                width: 100%;
-                background-color: var(--white);
-                flex-direction: column;
-                align-items: center;
-                padding: 2rem 0;
-                box-shadow: 0 10px 10px rgba(0,0,0,0.05);
-                transform: translateY(-150%);
-                transition: transform 0.3s ease-in-out;
-                z-index: -1;
-            }
+        .accordion-content.open {
+            max-height: 500px;
+        }
 
-            .nav-links.nav-active {
-                transform: translateY(0);
-            }
-
-            .about-container {
-                padding: 2rem 1.5rem;
-            }
+        /* Smooth tab highlight */
+        .tab-btn.active {
+            background-color: #5E8170;
+            color: #FFFFFF;
+            border-color: #5E8170;
         }
     </style>
 </head>
-<body>
+<body class="antialiased selection:bg-sage-200 selection:text-sage-700">
 
-    <!-- MENÜ -->
-    <nav>
-        <a href="#anasayfa" class="logo">Cansu Altun.</a>
-        <button class="hamburger" id="hamburger-btn">☰</button>
-        <ul class="nav-links" id="nav-links">
-            <li><a href="#anasayfa">Ana Sayfa</a></li>
-            <li><a href="#hakkimda">Hakkımda</a></li>
-            <li><a href="#hizmetler">Hizmetler</a></li>
-            <li><a href="#iletisim">İletişim</a></li>
-        </ul>
-    </nav>
+    <!-- NAVBAR -->
+    <header class="fixed top-0 left-0 right-0 z-50 glass-nav transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                <!-- Logo / Name -->
+                <a href="#anasayfa" class="flex flex-col">
+                    <span class="font-serif font-bold text-xl sm:text-2xl text-sage-700 tracking-tight">Uzm. Erg. Cansu Altun</span>
+                    <span class="text-xs text-sand font-medium uppercase tracking-widest -mt-1">Ergoterapist & Gelişim Danışmanı</span>
+                </a>
 
-    <!-- ANA SAYFA GİRİŞİ -->
-    <section id="anasayfa" class="hero">
-        <div class="hero-content reveal">
-            <h1>Hayata Anlam Katan <span>Dokunuşlar</span></h1>
-            <p>Uzm. Ergoterapist Cansu Altun ile bağımsız, anlamlı ve kaliteli bir yaşama adım atın. Kişiye özel terapi yaklaşımlarıyla yanınızdayız.</p>
-            <a href="#iletisim" class="btn">Randevu Al</a>
+                <!-- Desktop Navigation Links -->
+                <nav class="hidden md:flex items-center space-x-8">
+                    <a href="#anasayfa" class="text-sm font-medium text-charcoal hover:text-sage-500 transition-colors">Ana Sayfa</a>
+                    <a href="#ergoterapi-nedir" class="text-sm font-medium text-charcoal hover:text-sage-500 transition-colors">Ergoterapi Nedir?</a>
+                    <a href="#hakkimda" class="text-sm font-medium text-charcoal hover:text-sage-500 transition-colors">Hakkımda</a>
+                    <a href="#uzmanliklar" class="text-sm font-medium text-charcoal hover:text-sage-500 transition-colors">Uzmanlık Alanları</a>
+                    <a href="#sertifikalar" class="text-sm font-medium text-charcoal hover:text-sage-500 transition-colors">Sertifikalar</a>
+                    <a href="#sss" class="text-sm font-medium text-charcoal hover:text-sage-500 transition-colors">SSS</a>
+                    <a href="#iletisim" class="px-5 py-2.5 rounded-full text-xs font-semibold bg-sage-500 text-white hover:bg-sage-600 transition-all shadow-sm hover:shadow-md">
+                        İletişim & Bilgi
+                    </a>
+                </nav>
+
+                <!-- Mobile Hamburger Button -->
+                <button id="mobile-menu-btn" aria-label="Menüyü Aç" class="md:hidden p-2 rounded-lg text-sage-700 hover:bg-sage-100 focus:outline-none">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path id="hamburger-icon" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+                    </svg>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Drawer Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-cream-50 border-b border-sage-100 px-4 pt-2 pb-6 space-y-3">
+            <a href="#anasayfa" class="mobile-link block px-3 py-2 rounded-md text-base font-medium text-charcoal hover:bg-sage-100">Ana Sayfa</a>
+            <a href="#ergoterapi-nedir" class="mobile-link block px-3 py-2 rounded-md text-base font-medium text-charcoal hover:bg-sage-100">Ergoterapi Nedir?</a>
+            <a href="#hakkimda" class="mobile-link block px-3 py-2 rounded-md text-base font-medium text-charcoal hover:bg-sage-100">Hakkımda & Vizyon</a>
+            <a href="#uzmanliklar" class="mobile-link block px-3 py-2 rounded-md text-base font-medium text-charcoal hover:bg-sage-100">Uzmanlık Alanları</a>
+            <a href="#sertifikalar" class="mobile-link block px-3 py-2 rounded-md text-base font-medium text-charcoal hover:bg-sage-100">Eğitim & Sertifikalar</a>
+            <a href="#sss" class="mobile-link block px-3 py-2 rounded-md text-base font-medium text-charcoal hover:bg-sage-100">Sıkça Sorulan Sorular</a>
+            <a href="#iletisim" class="mobile-link block px-3 py-2 rounded-md text-base font-medium text-sage-600 font-semibold hover:bg-sage-100">İletişim & Konum</a>
+        </div>
+    </header>
+
+    <!-- HERO SECTION -->
+    <section id="anasayfa" class="min-h-screen pt-28 pb-16 flex items-center justify-center relative overflow-hidden bg-gradient-to-b from-cream-50 via-cream-100 to-cream-50">
+        <!-- Subtle Decorative Background Circles -->
+        <div class="absolute top-1/4 left-10 w-72 h-72 bg-sage-200 rounded-full mix-blend-multiply filter blur-3xl opacity-30 animate-pulse"></div>
+        <div class="absolute bottom-10 right-10 w-96 h-96 bg-sand rounded-full mix-blend-multiply filter blur-3xl opacity-20"></div>
+
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10 reveal">
+            <!-- Badge -->
+            <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-sage-100 border border-sage-200 text-sage-700 text-xs font-semibold uppercase tracking-wider mb-6">
+                <span class="w-2 h-2 rounded-full bg-terracotta-500 animate-ping"></span>
+                Bütüncül Ergoterapi & Gelişimsel Terapi
+            </div>
+
+            <!-- Title -->
+            <h1 class="font-serif text-3xl sm:text-5xl lg:text-6xl text-charcoal font-bold leading-tight mb-6">
+                Anlamlı Becerilerle Güçlenen, <br class="hidden sm:inline"/>
+                <span class="text-sage-500 italic font-normal">Bağımsız ve Dengeli</span> Bir Yaşam.
+            </h1>
+
+            <!-- Subtitle -->
+            <p class="text-base sm:text-lg text-gray-600 max-w-3xl mx-auto leading-relaxed mb-10">
+                Ergoterapi; bireylerin günlük yaşamda karşılaştığı zorlukları aşmalarını, duyu bütünleme süreçlerini düzenlemelerini ve potansiyellerini en üst seviyede yaşamalarına destek olan bilimsel ve kişi odaklı bir disiplindir.
+            </p>
+
+            <!-- Action Buttons (Pure Information Navigation) -->
+            <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+                <a href="#ergoterapi-nedir" class="w-full sm:w-auto px-8 py-4 rounded-full bg-sage-500 text-white font-medium text-sm hover:bg-sage-600 transition-all shadow-md hover:shadow-lg flex items-center justify-center gap-2">
+                    <span>Ergoterapiyi Keşfedin</span>
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                </a>
+                <a href="#uzmanliklar" class="w-full sm:w-auto px-8 py-4 rounded-full bg-white text-sage-700 border border-sage-200 font-medium text-sm hover:bg-sage-50 transition-all shadow-sm flex items-center justify-center gap-2">
+                    <span>Uzmanlık Alanlarım</span>
+                </a>
+            </div>
+
+            <!-- Quick Info Bar -->
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mt-16 pt-10 border-t border-sage-200/60 text-left">
+                <div class="p-4 bg-white/60 rounded-2xl border border-white/80">
+                    <span class="text-xs text-sage-600 uppercase font-semibold block mb-1">Yaklaşım</span>
+                    <span class="text-sm font-bold text-charcoal">Kişiye Özel & Bütüncül</span>
+                </div>
+                <div class="p-4 bg-white/60 rounded-2xl border border-white/80">
+                    <span class="text-xs text-sage-600 uppercase font-semibold block mb-1">Odak Alanı</span>
+                    <span class="text-sm font-bold text-charcoal">Duyu & Gelişim</span>
+                </div>
+                <div class="p-4 bg-white/60 rounded-2xl border border-white/80">
+                    <span class="text-xs text-sage-600 uppercase font-semibold block mb-1">Metodoloji</span>
+                    <span class="text-sm font-bold text-charcoal">Kanıta Dayalı Terapi</span>
+                </div>
+                <div class="p-4 bg-white/60 rounded-2xl border border-white/80">
+                    <span class="text-xs text-sage-600 uppercase font-semibold block mb-1">Hedef Kitle</span>
+                    <span class="text-sm font-bold text-charcoal">Çocuk, Ergen & Aile</span>
+                </div>
+            </div>
         </div>
     </section>
 
-    <!-- HAKKIMDA -->
-    <section id="hakkimda">
-        <h2 class="section-title reveal">Hakkımda</h2>
-        <div class="about-container reveal">
-            <p>Merhaba, ben Cansu Altun. Ergoterapi alanındaki uzmanlığımla, çocukların ve yetişkinlerin günlük yaşam aktivitelerinde maksimum bağımsızlığa ulaşmalarını hedefliyorum. Her bireyin biricik olduğuna inanıyor ve terapi programlarımı bu vizyonla, sevgi ve bilimsel temeller ışığında hazırlıyorum.</p>
-            <br>
-            <p>Amacım; sadece beceri kazandırmak değil, bireylerin yaşam kalitesini artırarak hayatı daha neşeli ve yaşanabilir kılmaktır.</p>
+    <!-- ERGOTERAPİ NEDİR? SECTION -->
+    <section id="ergoterapi-nedir" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16 reveal">
+                <h2 class="text-xs uppercase tracking-widest font-bold text-sage-500 mb-2">Bilgilendirme</h2>
+                <h3 class="font-serif text-3xl sm:text-4xl text-charcoal font-bold mb-4">Ergoterapi Tam Olarak Nedir?</h3>
+                <p class="text-gray-600 text-sm sm:text-base leading-relaxed">
+                    Ergoterapi (Occupational Therapy); anlamlı ve amaçlı aktiviteler aracılığıyla bireylerin sağlığını, iyilik halini ve günlük yaşamdaki bağımsızlığını artırmayı hedefleyen sağlığa destek mesleğidir.
+                </p>
+            </div>
+
+            <!-- 3 Pillar Cards -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
+                <!-- Card 1 -->
+                <div class="p-8 rounded-3xl bg-cream-50 border border-cream-200 hover:border-sage-200 transition-all reveal">
+                    <div class="w-12 h-12 rounded-2xl bg-sage-100 flex items-center justify-center text-sage-600 font-bold text-xl mb-6">01</div>
+                    <h4 class="font-serif text-xl font-bold text-charcoal mb-3">Kime Hitap Eder?</h4>
+                    <p class="text-gray-600 text-sm leading-relaxed mb-4">
+                        Gelişimsel gecikmesi olan çocuklardan, duyu işleme güçlüğü çeken bireylere; motor beceri eksikliği yaşayanlardan, günlük aktivitelerde bağımsızlık arayan her yaş grubuna yöneliktir.
+                    </p>
+                    <ul class="text-xs text-sage-700 space-y-2 font-medium">
+                        <li>• Duyu Bütünleme Güçlükleri</li>
+                        <li>• Ince & Kaba Motor Beceriler</li>
+                        <li>• Öz Bakım & Okul Becerileri</li>
+                    </ul>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="p-8 rounded-3xl bg-cream-50 border border-cream-200 hover:border-sage-200 transition-all reveal">
+                    <div class="w-12 h-12 rounded-2xl bg-terracotta-500/10 flex items-center justify-center text-terracotta-500 font-bold text-xl mb-6">02</div>
+                    <h4 class="font-serif text-xl font-bold text-charcoal mb-3">Çalışma Metodu</h4>
+                    <p class="text-gray-600 text-sm leading-relaxed mb-4">
+                        Terapi süreci, bireyin güçlü yönlerini ve gelişim alanlarını belirleyen detaylı değerlendirmelerle başlar. Oyun ve yapılandırılmış aktiviteler temel araç olarak kullanılır.
+                    </p>
+                    <ul class="text-xs text-sage-700 space-y-2 font-medium">
+                        <li>• Detaylı Gelişimsel Değerlendirme</li>
+                        <li>• Oyun Temelli Müdahaleler</li>
+                        <li>• Çevresel Düzenlemeler</li>
+                    </ul>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="p-8 rounded-3xl bg-cream-50 border border-cream-200 hover:border-sage-200 transition-all reveal">
+                    <div class="w-12 h-12 rounded-2xl bg-sand/20 flex items-center justify-center text-sand font-bold text-xl mb-6">03</div>
+                    <h4 class="font-serif text-xl font-bold text-charcoal mb-3">Temel Hedef</h4>
+                    <p class="text-gray-600 text-sm leading-relaxed mb-4">
+                        Sadece fiziksel veya duyusal becerileri geliştirmek değil; bireyin ev, okul ve sosyal ortamında kendi kendine yetebilen, mutlu bir birey olmasını sağlamaktır.
+                    </p>
+                    <ul class="text-xs text-sage-700 space-y-2 font-medium">
+                        <li>• Maksimum Bağımsızlık</li>
+                        <li>• Yaşam Kalitesinde Artış</li>
+                        <li>• Aile İçi Denge ve Uyum</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Comparison / Informational Box -->
+            <div class="p-8 rounded-3xl bg-sage-50 border border-sage-100 reveal">
+                <div class="flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
+                    <div>
+                        <span class="inline-block px-3 py-1 bg-sage-200 text-sage-700 text-xs font-semibold rounded-full mb-2">Merak Edilenler</span>
+                        <h4 class="font-serif text-2xl font-bold text-charcoal mb-2">Ergoterapi ile Fizyoterapi Arasındaki Fark Nedir?</h4>
+                        <p class="text-gray-600 text-sm max-w-2xl leading-relaxed">
+                            Fizyoterapi öncelikli olarak kas gücü, eklem hareket açıklığı ve kaba motor işlevlere odaklanırken; **Ergoterapi** bu becerilerin duyusal, bilişsel ve çevresel boyutlarını birleştirerek bireyin anlamlı bir aktiviteyi (örneğin düğme iliklemek, kalemi doğru tutmak, derse odaklanmak) bağımsız yapabilmesine odaklanır.
+                        </p>
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
 
-    <!-- HİZMETLER -->
-    <section id="hizmetler">
-        <h2 class="section-title reveal">Hizmetlerimiz</h2>
-        <div class="services-grid">
-            <div class="service-card reveal">
-                <div class="service-icon">🧩</div>
-                <h3>Duyu Bütünleme</h3>
-                <p>Çevreden gelen duyusal bilgilerin beyinde işlenmesi ve uygun yanıtların oluşturulması sürecini destekleyici terapiler.</p>
-            </div>
-            
-            <div class="service-card reveal">
-                <div class="service-icon">🧸</div>
-                <h3>Pediatrik Ergoterapi</h3>
-                <p>Çocukların ince motor, kaba motor ve bilişsel becerilerini oyun temelli yaklaşımlarla geliştirme çalışmaları.</p>
-            </div>
+    <!-- HAKKIMDA & VİZYONUM SECTION -->
+    <section id="hakkimda" class="py-20 bg-cream-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                <!-- Visual / Decorative Profile Frame -->
+                <div class="lg:col-span-5 reveal">
+                    <div class="relative mx-auto max-w-md lg:max-w-none">
+                        <!-- Decorative Frame Background -->
+                        <div class="absolute -inset-4 bg-sage-200 rounded-3xl transform -rotate-3 transition-transform hover:rotate-0"></div>
+                        <div class="relative bg-white p-8 rounded-3xl shadow-lg border border-sage-100 text-center">
+                            <!-- Avatar Placeholder Icon / Illustration -->
+                            <div class="w-28 h-28 mx-auto rounded-full bg-sage-100 flex items-center justify-center text-sage-600 mb-6">
+                                <svg class="w-14 h-14" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"/></svg>
+                            </div>
+                            <h4 class="font-serif text-2xl font-bold text-charcoal">Uzm. Erg. Cansu Altun</h4>
+                            <p class="text-xs text-sand font-semibold uppercase tracking-wider mt-1 mb-4">Ergoterapist & Pediatrik Terapi Uzmanı</p>
+                            <p class="text-xs text-gray-500 leading-relaxed italic">
+                                "Her çocuk ve birey, keşfedilmeyi bekleyen eşsiz bir potansiyele sahiptir. Amacım bu yolculukta güvenli bir rehber olabilmektir."
+                            </p>
+                        </div>
+                    </div>
+                </div>
 
-            <div class="service-card reveal">
-                <div class="service-icon">🧠</div>
-                <h3>Nörolojik Rehabilitasyon</h3>
-                <p>Nörolojik rahatsızlıklara sahip bireylerin günlük yaşama adaptasyonunu ve bağımsızlıklarını artırma süreci.</p>
-            </div>
+                <!-- Text Content -->
+                <div class="lg:col-span-7 space-y-6 reveal">
+                    <div>
+                        <h2 class="text-xs uppercase tracking-widest font-bold text-sage-500 mb-2">Hakkımda & Yaklaşımım</h2>
+                        <h3 class="font-serif text-3xl sm:text-4xl text-charcoal font-bold">Bilimin ve Empatinin Işığında Bir Terapi Yolculuğu</h3>
+                    </div>
 
-            <div class="service-card reveal">
-                <div class="service-icon">🌱</div>
-                <h3>Günlük Yaşam Eğitimi</h3>
-                <p>Öz bakım, iş, okul ve serbest zaman aktivitelerinde bağımsızlığı sağlamaya yönelik kişiselleştirilmiş müdahaleler.</p>
+                    <p class="text-gray-600 leading-relaxed text-sm sm:text-base">
+                        Merhaba, ben Cansu Altun. Ergoterapi lisans ve uzmanlık eğitimlerim boyunca, bireylerin yaşam kalitelerini artıran duyusal, motor ve bilişsel süreçler üzerine odaklandım. Çalışmalarımda ana hedefim; gelişimsel süreçte destek ihtiyacı olan çocukların ve ailelerin yaşamlarına bütüncül ve kanıta dayalı yöntemlerle dokunmaktır.
+                    </p>
+
+                    <p class="text-gray-600 leading-relaxed text-sm sm:text-base">
+                        Terapi odasında kurulan ilişkinin en önemli ayağı güven ve sevgidir. Duyu Bütünleme Terapisi, DIR Floortime ve gelişimsel değerlendirme testlerini harmanlayarak her bireyin kendi hızına ve ihtiyaçlarına uygun kişiselleştirilmiş programlar sunuyorum.
+                    </p>
+
+                    <!-- Key Pillars List -->
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-4">
+                        <div class="flex items-start gap-3">
+                            <div class="w-8 h-8 rounded-lg bg-sage-100 flex items-center justify-center text-sage-600 font-bold text-sm shrink-0">✓</div>
+                            <div>
+                                <h5 class="font-semibold text-sm text-charcoal">Aile Odaklı Danışmanlık</h5>
+                                <p class="text-xs text-gray-500">Terapinin ev ve okul ortamına entegre edilmesi.</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-3">
+                            <div class="w-8 h-8 rounded-lg bg-sage-100 flex items-center justify-center text-sage-600 font-bold text-sm shrink-0">✓</div>
+                            <div>
+                                <h5 class="font-semibold text-sm text-charcoal">Güncel & Etik Metotlar</h5>
+                                <p class="text-xs text-gray-500">Uluslararası standartlarda terapotik yaklaşımlar.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- İLETİŞİM -->
-    <section id="iletisim">
-        <h2 class="section-title reveal">İletişim</h2>
-        <div class="contact-container reveal">
-            <div class="contact-info">
-                <p><strong>📍 Adres:</strong> (Klinik adresi veya şehir bilgisi eklenebilir)</p>
-                <p><strong>📞 Telefon:</strong> +90 555 123 45 67</p>
-                <p><strong>✉️ E-posta:</strong> iletisim@ergoterapistcansualtun.com</p>
-                <p><strong>📸 Instagram:</strong> @ergoterapistcansu</p>
+    <!-- UZMANLIK ALANLARI SECTION -->
+    <section id="uzmanliklar" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16 reveal">
+                <h2 class="text-xs uppercase tracking-widest font-bold text-sage-500 mb-2">Çalışma Alanları</h2>
+                <h3 class="font-serif text-3xl sm:text-4xl text-charcoal font-bold mb-4">Uzmanlık ve İlgilendiğim Alanlar</h3>
+                <p class="text-gray-600 text-sm sm:text-base">
+                    Aşağıda ergoterapi disiplini kapsamında odaklandığım temel müdahale ve destek alanlarını inceleyebilirsiniz.
+                </p>
+            </div>
+
+            <!-- Cards Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Card 1 -->
+                <div class="p-8 rounded-3xl bg-cream-50 border border-cream-200 hover:shadow-xl hover:-translate-y-1 transition-all duration-300 reveal">
+                    <div class="w-14 h-14 rounded-2xl bg-sage-100 flex items-center justify-center text-sage-600 mb-6">
+                        <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"/></svg>
+                    </div>
+                    <h4 class="font-serif text-xl font-bold text-charcoal mb-3">Duyu Bütünleme Terapisi</h4>
+                    <p class="text-gray-600 text-sm leading-relaxed mb-4">
+                        Çevreden ve bedenimizden gelen duyusal uyaranların (dokunma, hareket, denge, işitme vb.) beyinde doğru işlenmesini sağlama süreci.
+                    </p>
+                    <span class="text-xs font-semibold text-sage-600">Odak: Hassasiyetler, Hareket Arayışı, Denge</span>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="p-8 rounded-3xl bg-cream-50 border border-cream-200 hover:shadow-xl hover:-translate-y-1 transition-all duration-300 reveal">
+                    <div class="w-14 h-14 rounded-2xl bg-terracotta-500/10 flex items-center justify-center text-terracotta-500 mb-6">
+                        <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M14.828 14.828a4 4 0 01-5.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+                    </div>
+                    <h4 class="font-serif text-xl font-bold text-charcoal mb-3">Pediatrik Ergoterapi</h4>
+                    <p class="text-gray-600 text-sm leading-relaxed mb-4">
+                        Bebeklik ve çocukluk döneminde oyun aktiviteleri aracılığıyla gelişimsel basamakların desteklenmesi ve akran uyumunun sağlanması.
+                    </p>
+                    <span class="text-xs font-semibold text-terracotta-500">Odak: Oyun Becerileri, Sosyal Uyum, İletişim</span>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="p-8 rounded-3xl bg-cream-50 border border-cream-200 hover:shadow-xl hover:-translate-y-1 transition-all duration-300 reveal">
+                    <div class="w-14 h-14 rounded-2xl bg-sand/20 flex items-center justify-center text-sand mb-6">
+                        <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z"/></svg>
+                    </div>
+                    <h4 class="font-serif text-xl font-bold text-charcoal mb-3">İnce & Kaba Motor Beceriler</h4>
+                    <p class="text-gray-600 text-sm leading-relaxed mb-4">
+                        Kalem tutma, makas kullanma, düğme ilikleme gibi ince motor işlevler ile zıplama, koşma ve koordinasyon gerektiren kaba motor gelişim.
+                    </p>
+                    <span class="text-xs font-semibold text-sand">Odak: El Kasları, El-Göz Koordinasyonu</span>
+                </div>
+
+                <!-- Card 4 -->
+                <div class="p-8 rounded-3xl bg-cream-50 border border-cream-200 hover:shadow-xl hover:-translate-y-1 transition-all duration-300 reveal">
+                    <div class="w-14 h-14 rounded-2xl bg-sage-100 flex items-center justify-center text-sage-600 mb-6">
+                        <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+                    </div>
+                    <h4 class="font-serif text-xl font-bold text-charcoal mb-3">Günlük Yaşam Becerileri (ADL)</h4>
+                    <p class="text-gray-600 text-sm leading-relaxed mb-4">
+                        Yemek yeme, giyinme, öz bakım, hijyen ve okul düzenine uyum gibi temel günlük rutinlerde tam bağımsızlığa ulaşma çalışmaları.
+                    </p>
+                    <span class="text-xs font-semibold text-sage-600">Odak: Öz Bakım, Bağımsız Hareket</span>
+                </div>
+
+                <!-- Card 5 -->
+                <div class="p-8 rounded-3xl bg-cream-50 border border-cream-200 hover:shadow-xl hover:-translate-y-1 transition-all duration-300 reveal">
+                    <div class="w-14 h-14 rounded-2xl bg-terracotta-500/10 flex items-center justify-center text-terracotta-500 mb-6">
+                        <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"/></svg>
+                    </div>
+                    <h4 class="font-serif text-xl font-bold text-charcoal mb-3">DEHB & Dikkat Müdahaleleri</h4>
+                    <p class="text-gray-600 text-sm leading-relaxed mb-4">
+                        Dikkat Eksikliği ve Hiperaktivite Bozukluğunda (DEHB) odaklanma, zaman yönetimi ve dürtü kontrolünü destekleyici terapotik yöntemler.
+                    </p>
+                    <span class="text-xs font-semibold text-terracotta-500">Odak: Odaklanma, Bilişsel Düzenleme</span>
+                </div>
+
+                <!-- Card 6 -->
+                <div class="p-8 rounded-3xl bg-cream-50 border border-cream-200 hover:shadow-xl hover:-translate-y-1 transition-all duration-300 reveal">
+                    <div class="w-14 h-14 rounded-2xl bg-sand/20 flex items-center justify-center text-sand mb-6">
+                        <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/></svg>
+                    </div>
+                    <h4 class="font-serif text-xl font-bold text-charcoal mb-3">Gelişimsel Takip & Aile Eğitimi</h4>
+                    <p class="text-gray-600 text-sm leading-relaxed mb-4">
+                        Çocuğun gelişim evrelerinin standart testlerle takibi ve ailelerin evdeki süreçleri yönetmelerine yardımcı danışmanlık.
+                    </p>
+                    <span class="text-xs font-semibold text-sand">Odak: Aile Rehberliği, Ev Programları</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- EĞİTİMLER VE SERTİFİKALAR SECTION -->
+    <section id="sertifikalar" class="py-20 bg-cream-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-12 reveal">
+                <h2 class="text-xs uppercase tracking-widest font-bold text-sage-500 mb-2">Akademik & Yetkinlikler</h2>
+                <h3 class="font-serif text-3xl sm:text-4xl text-charcoal font-bold mb-4">Eğitimler ve Sertifikalar</h3>
+                <p class="text-gray-600 text-sm sm:text-base">
+                    Güncel bilimsel gelişmeleri yakından takip ederek aldığım sertifikasyonlar ve akademik altyapım.
+                </p>
+            </div>
+
+            <!-- Tab Filter Buttons -->
+            <div class="flex flex-wrap justify-center gap-3 mb-10 reveal">
+                <button onclick="filterTabs('all')" class="tab-btn active px-5 py-2 rounded-full border border-sage-200 text-xs font-semibold transition-all">Tümü</button>
+                <button onclick="filterTabs('duyu')" class="tab-btn px-5 py-2 rounded-full border border-sage-200 text-xs font-semibold text-charcoal transition-all">Duyu Bütünleme & Floortime</button>
+                <button onclick="filterTabs('test')" class="tab-btn px-5 py-2 rounded-full border border-sage-200 text-xs font-semibold text-charcoal transition-all">Test & Değerlendirme</button>
+                <button onclick="filterTabs('akademik')" class="tab-btn px-5 py-2 rounded-full border border-sage-200 text-xs font-semibold text-charcoal transition-all">Akademik Dereceler</button>
+            </div>
+
+            <!-- Certifications Grid -->
+            <div id="cert-grid" class="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto">
+                <!-- Cert 1 -->
+                <div class="cert-item akademik p-6 rounded-2xl bg-white border border-sage-100 shadow-sm reveal">
+                    <div class="flex items-center gap-4">
+                        <div class="w-10 h-10 rounded-xl bg-sage-100 flex items-center justify-center text-sage-600 shrink-0 font-bold">🎓</div>
+                        <div>
+                            <span class="text-xs font-bold text-sand uppercase">Akademik</span>
+                            <h5 class="font-serif font-bold text-charcoal text-base">Ergoterapi Lisans Derecesi</h5>
+                            <p class="text-xs text-gray-500 mt-0.5">Fakülte Eğitim Müfredatı & Klinik Stajlar</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Cert 2 -->
+                <div class="cert-item duyu p-6 rounded-2xl bg-white border border-sage-100 shadow-sm reveal">
+                    <div class="flex items-center gap-4">
+                        <div class="w-10 h-10 rounded-xl bg-terracotta-500/10 flex items-center justify-center text-terracotta-500 shrink-0 font-bold">✨</div>
+                        <div>
+                            <span class="text-xs font-bold text-terracotta-500 uppercase">Uluslararası Sertifika</span>
+                            <h5 class="font-serif font-bold text-charcoal text-base">Duyu Bütünleme Terapisi Eğitimi</h5>
+                            <p class="text-xs text-gray-500 mt-0.5">Teori, Değerlendirme ve Klinik Uygulamalar</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Cert 3 -->
+                <div class="cert-item duyu p-6 rounded-2xl bg-white border border-sage-100 shadow-sm reveal">
+                    <div class="flex items-center gap-4">
+                        <div class="w-10 h-10 rounded-xl bg-sage-100 flex items-center justify-center text-sage-600 shrink-0 font-bold">🧩</div>
+                        <div>
+                            <span class="text-xs font-bold text-sage-600 uppercase">Gelişimsel Model</span>
+                            <h5 class="font-serif font-bold text-charcoal text-base">DIR Floortime Modeli Eğitimi</h5>
+                            <p class="text-xs text-gray-500 mt-0.5">İlişki ve İletişim Odaklı Terapi Sertifikasyonu</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Cert 4 -->
+                <div class="cert-item test p-6 rounded-2xl bg-white border border-sage-100 shadow-sm reveal">
+                    <div class="flex items-center gap-4">
+                        <div class="w-10 h-10 rounded-xl bg-sand/20 flex items-center justify-center text-sand shrink-0 font-bold">📋</div>
+                        <div>
+                            <span class="text-xs font-bold text-sand uppercase">Değerlendirme Testi</span>
+                            <h5 class="font-serif font-bold text-charcoal text-base">Pediatrik Gelişimsel Değerlendirme Testleri</h5>
+                            <p class="text-xs text-gray-500 mt-0.5">Motor ve Duyusal Değerlendirme Enstrümanları</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SIKÇA SORULAN SORULAR (SSS) SECTION -->
+    <section id="sss" class="py-20 bg-white">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16 reveal">
+                <h2 class="text-xs uppercase tracking-widest font-bold text-sage-500 mb-2">Merak Edilenler</h2>
+                <h3 class="font-serif text-3xl sm:text-4xl text-charcoal font-bold mb-4">Sıkça Sorulan Sorular</h3>
+                <p class="text-gray-600 text-sm sm:text-base">
+                    Ailelerin ergoterapi süreci hakkında en çok yönelttiği soruların yanıtları.
+                </p>
+            </div>
+
+            <!-- Accordion List -->
+            <div class="space-y-4">
+                <!-- Question 1 -->
+                <div class="border border-cream-200 rounded-2xl bg-cream-50 overflow-hidden reveal">
+                    <button onclick="toggleAccordion(this)" class="w-full text-left p-6 flex justify-between items-center focus:outline-none">
+                        <span class="font-serif font-bold text-charcoal text-base sm:text-lg">Çocuğumun duyu bütünleme terapisine ihtiyacı olduğunu nasıl anlarım?</span>
+                        <span class="transform transition-transform text-sage-600 font-bold text-xl">+</span>
+                    </button>
+                    <div class="accordion-content px-6 text-sm text-gray-600 leading-relaxed">
+                        <p class="pb-6">
+                            Çocuğunuz kıyafet etiketlerinden aşırı rahatsız oluyorsa, yüksek seslere veya dokulara karşı aşırı tepki veriyorsa; ya da aksine sürekli sallanma, bir yerlere çarpma gibi yoğun hareket arayışındaysa duyu bütünleme değerlendirmesi faydalı olabilir.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Question 2 -->
+                <div class="border border-cream-200 rounded-2xl bg-cream-50 overflow-hidden reveal">
+                    <button onclick="toggleAccordion(this)" class="w-full text-left p-6 flex justify-between items-center focus:outline-none">
+                        <span class="font-serif font-bold text-charcoal text-base sm:text-lg">Ergoterapi değerlendirmesi nasıl yapılır?</span>
+                        <span class="transform transition-transform text-sage-600 font-bold text-xl">+</span>
+                    </button>
+                    <div class="accordion-content px-6 text-sm text-gray-600 leading-relaxed">
+                        <p class="pb-6">
+                            İlk değerlendirme görüşmesinde aileden detaylı gelişimsel öykü alınır. Ardından çocuk standart testler ve gözleme dayalı oyun analizleri ile duyusal, motor ve bilişsel açıdan değerlendirilir.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Question 3 -->
+                <div class="border border-cream-200 rounded-2xl bg-cream-50 overflow-hidden reveal">
+                    <button onclick="toggleAccordion(this)" class="w-full text-left p-6 flex justify-between items-center focus:outline-none">
+                        <span class="font-serif font-bold text-charcoal text-base sm:text-lg">Süreçte ailenin rolü nedir?</span>
+                        <span class="transform transition-transform text-sage-600 font-bold text-xl">+</span>
+                    </button>
+                    <div class="accordion-content px-6 text-sm text-gray-600 leading-relaxed">
+                        <p class="pb-6">
+                            Ergoterapi sadece klinik odası ile sınırlı değildir. Terapi başarısının en büyük anahtarı, kliniğimizde önerilen ev düzenlemelerinin ve oyun aktivitelerinin aile tarafından günlük yaşama sevgiyle entegre edilmesidir.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Question 4 -->
+                <div class="border border-cream-200 rounded-2xl bg-cream-50 overflow-hidden reveal">
+                    <button onclick="toggleAccordion(this)" class="w-full text-left p-6 flex justify-between items-center focus:outline-none">
+                        <span class="font-serif font-bold text-charcoal text-base sm:text-lg">Ergoterapi hangi yaş gruplarını kapsar?</span>
+                        <span class="transform transition-transform text-sage-600 font-bold text-xl">+</span>
+                    </button>
+                    <div class="accordion-content px-6 text-sm text-gray-600 leading-relaxed">
+                        <p class="pb-6">
+                            Ergoterapi bebeklik döneminden itibaren tüm yaş gruplarına uygulanabilir. Çalışmalarım ağırlıklı olarak pediatri (0-14 yaş) ve gelişimsel takip odaklıdır.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- İLETİŞİM & BİLGİLENDİRME SECTION -->
+    <section id="iletisim" class="py-20 bg-cream-50 border-t border-sage-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12">
+                
+                <!-- Informational Contact Card -->
+                <div class="lg:col-span-6 space-y-6 reveal">
+                    <div>
+                        <h2 class="text-xs uppercase tracking-widest font-bold text-sage-500 mb-2">İletişim & Konum</h2>
+                        <h3 class="font-serif text-3xl font-bold text-charcoal">Sorularınız İçin Ulaşabilirsiniz</h3>
+                        <p class="text-gray-600 text-sm mt-2 leading-relaxed">
+                            Ergoterapi süreci ve gelişimsel değerlendirmeler hakkında bilgi almak veya genel sorularınızı iletmek için aşağıdaki kanallardan iletişim kurabilirsiniz.
+                        </p>
+                    </div>
+
+                    <div class="space-y-4 pt-4">
+                        <!-- Instagram -->
+                        <div class="p-4 rounded-2xl bg-white border border-sage-100 flex items-center gap-4">
+                            <div class="w-10 h-10 rounded-xl bg-terracotta-500/10 flex items-center justify-center text-terracotta-500 font-bold">📸</div>
+                            <div>
+                                <span class="text-xs text-gray-400 font-medium block">Instagram Sosyal Medya</span>
+                                <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" class="font-bold text-charcoal text-sm hover:text-sage-600">@ergoterapistcansualtun</a>
+                            </div>
+                        </div>
+
+                        <!-- Email -->
+                        <div class="p-4 rounded-2xl bg-white border border-sage-100 flex items-center gap-4">
+                            <div class="w-10 h-10 rounded-xl bg-sage-100 flex items-center justify-center text-sage-600 font-bold">✉️</div>
+                            <div>
+                                <span class="text-xs text-gray-400 font-medium block">E-Posta Adresi</span>
+                                <span class="font-bold text-charcoal text-sm">iletişim@ergoterapistcansualtun.com</span>
+                            </div>
+                        </div>
+
+                        <!-- Location / Info -->
+                        <div class="p-4 rounded-2xl bg-white border border-sage-100 flex items-center gap-4">
+                            <div class="w-10 h-10 rounded-xl bg-sand/20 flex items-center justify-center text-sand font-bold">📍</div>
+                            <div>
+                                <span class="text-xs text-gray-400 font-medium block">Hizmet & Danışmanlık</span>
+                                <span class="font-bold text-charcoal text-sm">İstanbul / Türkiye</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Quote and Warm Personal Note -->
+                <div class="lg:col-span-6 flex items-center reveal">
+                    <div class="p-8 sm:p-10 rounded-3xl bg-sage-500 text-white relative overflow-hidden shadow-xl">
+                        <!-- Subtle BG Ornament -->
+                        <div class="absolute -bottom-10 -right-10 w-48 h-48 bg-sage-600 rounded-full opacity-50 pointer-events-none"></div>
+
+                        <span class="text-4xl text-sand font-serif block mb-4">“</span>
+                        <p class="font-serif text-lg sm:text-xl leading-relaxed mb-8 italic font-light">
+                            Gelişim, her çocuğun kendi benzersiz ritminde attığı adımlarla gerçekleşir. Doğru yönlendirme ve sevgi dolu bir çevre ile aşılamayacak engel yoktur.
+                        </p>
+                        
+                        <div class="pt-6 border-t border-sage-400/50 flex items-center justify-between">
+                            <div>
+                                <h5 class="font-bold text-base font-serif">Uzm. Erg. Cansu Altun</h5>
+                                <p class="text-xs text-sage-200">Ergoterapist & Gelişim Takip Uzmanı</p>
+                            </div>
+                            <span class="text-2xl">🌱</span>
+                        </div>
+                    </div>
+                </div>
+
             </div>
         </div>
     </section>
 
     <!-- FOOTER -->
-    <footer>
-        <p>&copy; 2026 Uzm. Ergoterapist Cansu Altun. Tüm hakları saklıdır.</p>
+    <footer class="bg-charcoal text-white py-8 border-t border-gray-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-gray-400">
+            <p>&copy; 2026 Uzm. Ergoterapist Cansu Altun. Tüm hakları saklıdır.</p>
+            <p class="italic">Anlamlı Beceriler, Bağımsız Yaşam.</p>
+        </div>
     </footer>
 
-    <!-- ANİMASYON VE MOBİL MENÜ SCRİPTİ -->
+    <!-- JAVASCRIPT LOGIC -->
     <script>
-        // Mobil Menü Aç/Kapat
-        const hamburgerBtn = document.getElementById('hamburger-btn');
-        const navLinks = document.getElementById('nav-links');
-        const navItems = document.querySelectorAll('.nav-links a');
+        // 1. Mobile Menu Toggle
+        const mobileBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const mobileLinks = document.querySelectorAll('.mobile-link');
 
-        hamburgerBtn.addEventListener('click', () => {
-            navLinks.classList.toggle('nav-active');
+        mobileBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
         });
 
-        // Mobilde linke tıklayınca menüyü kapatma
-        navItems.forEach(item => {
-            item.addEventListener('click', () => {
-                navLinks.classList.remove('nav-active');
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
             });
         });
 
-        // Sayfa Kaydırıldıkça Beliren Elementler (Scroll Reveal Animasyonu)
-        function reveal() {
-            var reveals = document.querySelectorAll(".reveal");
-            for (var i = 0; i < reveals.length; i++) {
-                var windowHeight = window.innerHeight;
-                var elementTop = reveals[i].getBoundingClientRect().top;
-                var elementVisible = 100; // Elementin ekranda görünmeye başlayacağı piksel sınırı
-                
-                if (elementTop < windowHeight - elementVisible) {
-                    reveals[i].classList.add("active");
+        // 2. Accordion Functionality for FAQ
+        function toggleAccordion(button) {
+            const content = button.nextElementSibling;
+            const icon = button.querySelector('span:last-child');
+            
+            // Close other open items
+            document.querySelectorAll('.accordion-content').forEach(item => {
+                if (item !== content && item.classList.contains('open')) {
+                    item.classList.remove('open');
+                    item.previousElementSibling.querySelector('span:last-child').textContent = '+';
                 }
+            });
+
+            // Toggle current item
+            content.classList.toggle('open');
+            if (content.classList.contains('open')) {
+                icon.textContent = '−';
+            } else {
+                icon.textContent = '+';
             }
         }
-        
-        // Sayfa yüklendiğinde ilk elementleri göster
-        window.addEventListener("load", reveal);
-        // Kaydırıldıkça diğerlerini göster
-        window.addEventListener("scroll", reveal);
+
+        // 3. Tab Filter for Certifications
+        function filterTabs(category) {
+            const buttons = document.querySelectorAll('.tab-btn');
+            const items = document.querySelectorAll('.cert-item');
+
+            buttons.forEach(btn => btn.classList.remove('active'));
+            event.currentTarget.classList.add('active');
+
+            items.forEach(item => {
+                if (category === 'all' || item.classList.contains(category)) {
+                    item.style.display = 'block';
+                } else {
+                    item.style.display = 'none';
+                }
+            });
+        }
+
+        // 4. Scroll Reveal Animation using IntersectionObserver
+        const observerOptions = {
+            root: null,
+            rootMargin: '0px',
+            threshold: 0.15
+        };
+
+        const observer = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
     </script>
 </body>
 </html>
