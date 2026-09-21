@@ -414,7 +414,7 @@
                         <span class="text-xs font-bold tracking-widest text-terracotta-500 uppercase">Bilgi Paylaşımı & Rehber</span>
                         <h2 class="font-serif text-3xl sm:text-4xl font-bold text-sage-800">Yazılarım & Makaleler</h2>
                         <p class="text-sm text-charcoal/70 max-w-xl">
-                            Duyu bütünleme, tuvalet becerisi, çocuk gelişimi ve evde uygulanabilecek pratik öneriler üzerine hazırladığım güncel yazılar.
+                            Duyu bütünleme, öz bakım becerileri ve çocuk gelişimi üzerine hazırladığım güncel ve bilgilendirici rehberler.
                         </p>
                     </div>
 
@@ -433,25 +433,25 @@
                 <div class="swiper blogSwiper pb-14">
                     <div class="swiper-wrapper">
 
-                        <!-- BLOG YAZISI 1 (GÜNCELLENEN TUVALET BECERİSİ REHBERİ) -->
+                        <!-- BLOG YAZISI 1 (GÜNCELLENEN YAZI) -->
                         <div class="swiper-slide">
                             <article class="bg-cream-50 rounded-2xl overflow-hidden border border-cream-200 hover:shadow-lg transition-all h-full flex flex-col">
                                 <div class="relative h-48 bg-sage-100 overflow-hidden">
-                                    <img src="https://images.unsplash.com/photo-1587654780291-39c9404d746b?auto=format&fit=crop&w=800&q=80" alt="Tuvalet Becerisi ve Ergoterapi" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
-                                    <span class="absolute top-4 left-4 bg-white/90 backdrop-blur-sm text-sage-800 text-xs font-bold px-3 py-1 rounded-full border border-cream-200">Tuvalet Becerisi</span>
+                                    <img src="https://images.unsplash.com/photo-1587654780291-39c9404d746b?auto=format&fit=crop&w=800&q=80" alt="Tuvalet Becerisi" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                                    <span class="absolute top-4 left-4 bg-white/90 backdrop-blur-sm text-sage-800 text-xs font-bold px-3 py-1 rounded-full border border-cream-200">Öz Bakım & Ergoterapi</span>
                                 </div>
                                 <div class="p-6 flex-1 flex flex-col justify-between space-y-4">
                                     <div class="space-y-2">
                                         <div class="flex items-center gap-3 text-xs text-charcoal/60">
                                             <span>📅 21 Eylül 2026</span>
                                             <span>•</span>
-                                            <span>⏱️ 7 dk okuma</span>
+                                            <span>⏱️ 6 dk okuma</span>
                                         </div>
                                         <h3 class="font-serif text-xl font-bold text-sage-800 hover:text-terracotta-500 transition-colors">
-                                            Çocuklarda Tuvalet Becerisi, Kaka Tutma ve Ergoterapi Stratejileri
+                                            Tuvalet Becerisi ve Tuvalet Problemleri
                                         </h3>
                                         <p class="text-xs text-charcoal/75 leading-relaxed line-clamp-3">
-                                            Tuvalet bağımsızlığı yalnızca bir öz bakım becerisi değil; duyusal, motor ve bilişsel sistemlerin karmaşık etkileşimidir. Kaka tutma, duyusal hassasiyetler ve evde uygulanabilecek stratejiler.
+                                            Tuvalet becerisi; vücuttan gelen içsel sinyalleri fark etmeyi, hijyen adımlarını ve bağımsızlık kazanmayı kapsayan önemli bir günlük yaşam aktivitesidir. Nedenleri ve ergoterapi stratejilerini inceleyin.
                                         </p>
                                     </div>
                                     <button onclick="openBlogModal(0)" class="text-xs font-bold text-sage-700 hover:text-terracotta-500 flex items-center gap-1 transition-colors pt-2 border-t border-cream-200">
@@ -809,7 +809,7 @@
     <!-- BLOG OKUMA MODALİ (POP-UP READER) -->
     <div id="blog-modal" class="fixed inset-0 z-50 hidden bg-black/60 backdrop-blur-sm flex items-center justify-center p-4">
         <div class="bg-white rounded-3xl max-w-3xl w-full max-h-[90vh] overflow-y-auto border border-cream-200 shadow-2xl p-6 sm:p-10 relative space-y-6">
-            <button onclick="closeBlogModal()" class="absolute top-6 right-6 w-10 h-10 rounded-full bg-cream-100 text-charcoal hover:bg-terracotta-500 hover:text-white flex items-center justify-center font-bold transition-all">
+            <button onclick="closeBlogModal()" class="absolute top-6 right-6 w-10 h-10 rounded-full bg-cream-100 text-charcoal hover:bg-terracotta-500 hover:text-white flex items-center justify-center font-bold transition-all z-10">
                 ✕
             </button>
             <div id="modal-content" class="space-y-4">
@@ -882,76 +882,151 @@
         // Blog İçerik Veritabanı
         const blogData = [
             {
-                title: "Çocuklarda Tuvalet Becerisi, Kaka Tutma ve Ergoterapi Stratejileri",
-                category: "Tuvalet Becerisi",
+                title: "Tuvalet Becerisi ve Tuvalet Problemleri",
+                category: "Öz Bakım & Ergoterapi",
                 date: "21 Eylül 2026",
-                readTime: "7 dk okuma",
+                readTime: "6 dk okuma",
                 image: "https://images.unsplash.com/photo-1587654780291-39c9404d746b?auto=format&fit=crop&w=800&q=80",
                 content: `
-                    <div class="space-y-4 text-sm sm:text-base text-charcoal/80 leading-relaxed">
-                        <h3 class="font-serif text-xl font-bold text-sage-800">1. Tuvalet Becerisi</h3>
-                        <p>Tuvalet becerisi, çocuğun yalnızca idrarını veya dışkısını tuvalete yapmasını değil; vücudundan gelen içsel sinyalleri fark etmesini, bu ihtiyacı gidermek için uygun ortamı bulmasını, tuvaletini yapmaya hazırlanmasını ve sonrasında gerekli hijyen basamaklarını tamamlamasını kapsayan önemli bir günlük yaşam aktivitesidir.</p>
-                        <p>Bu süreç; tuvalet ihtiyacını fark etme, uygun zamanda tuvalete ulaşma, kıyafetleri çıkarma, tuvalete uygun şekilde oturma, tuvaleti yapma, tuvalet kâğıdını kullanma, sifonu çekme ve ellerini yıkayıp kurulama gibi birden fazla becerinin bir arada kullanılmasını gerektirir.</p>
-                        <p>Bu nedenle tuvalet becerisinin kazanılması, çocuğun yalnızca bir öz bakım becerisi edinmesi değil, özerklik ve bağımsızlık kazanması açısından da önemli bir gelişimsel basamaktır.</p>
+                    <div class="space-y-6">
+                        <!-- 1. Tuvalet Becerisi -->
+                        <section class="space-y-3">
+                            <h3 class="font-serif text-xl font-bold text-sage-800 border-b border-cream-200 pb-2">1. Tuvalet Becerisi</h3>
+                            <p class="text-sm sm:text-base text-charcoal/80 leading-relaxed">
+                                Tuvalet becerisi, çocuğun yalnızca idrarını veya dışkısını tuvalete yapmasını değil; vücudundan gelen içsel sinyalleri fark etmesini, bu ihtiyacı gidermek için uygun ortamı bulmasını, tuvaletini yapmaya hazırlanmasını ve sonrasında gerekli hijyen basamaklarını tamamlamasını kapsayan önemli bir günlük yaşam aktivitesidir.
+                            </p>
+                            <p class="text-sm sm:text-base text-charcoal/80 leading-relaxed">
+                                Bu süreç; tuvalet ihtiyacını fark etme, uygun zamanda tuvalete ulaşma, kıyafetleri çıkarma, tuvalete uygun şekilde oturma, tuvaleti yapma, tuvalet kâğıdını kullanma, sifonu çekme ve ellerini yıkayıp kurulama gibi birden fazla becerinin bir arada kullanılmasını gerektirir.
+                            </p>
+                            <p class="text-sm sm:text-base text-charcoal/80 leading-relaxed">
+                                Bu nedenle tuvalet becerisinin kazanılması, çocuğun yalnızca bir öz bakım becerisi edinmesi değil, özerklik ve bağımsızlık kazanması açısından da önemli bir gelişimsel basamaktır.
+                            </p>
+                        </section>
 
-                        <h3 class="font-serif text-xl font-bold text-sage-800 pt-2">2. Tuvalet Becerisi Ne Zaman ve Nasıl Gelişir?</h3>
-                        <p>Tuvalet farkındalığı çocuklarda genellikle 18 ile 36. aylar arasında şekillenmeye başlar. Ancak bu alışkanlığı kazanmak, sadece maddelerin üzerini çizdiğimiz bir kontrol listesi değildir; fiziksel, bilişsel, iletişimsel, duygusal ve duyusal sistemlerin karmaşık bir etkileşimidir. Ergoterapistler olarak tuvalet kullanımını önemli bir günlük yaşam aktivitesi olarak görür ve sürece bütüncül yaklaşırız.</p>
-                        <p>Bizim için hazır oluşluk gelişimsel ipuçlarına bağlıdır. Bu süreçte şu faktörleri değerlendiririz:</p>
-                        <ul class="list-disc pl-5 space-y-2">
-                            <li><strong>İnterosepsiyon:</strong> Çocuğun çiş veya kaka ihtiyacı gibi vücudunun içerisinden gelen sinyalleri fark edebilme yeteneği.</li>
-                            <li><strong>İletişim ve İfade Becerileri:</strong> Çocuğun ihtiyacını sözel olarak dile getirmesi ya da jest, mimik ve beden diliyle (tuvalete yönelme, bacaklarını çaprazlama, bezini çekiştirme vb.) çevresine aktarabilmesi.</li>
-                            <li><strong>Motor Beceriler:</strong> Pantolon indirme/çekme (ince motor), klozette dengede güvenle oturma (kaba motor) ve genital bölge temizliği (bilateral entegrasyon).</li>
-                            <li><strong>Duyusal İşlemleme:</strong> Tuvalet ortamındaki dokulara, klozet soğukluğuna, sifon sesine veya kokulara karşı artmış ya da azalmış tepki.</li>
-                            <li><strong>Duygusal Düzenleme:</strong> Süreçteki değişimlere uyum sağlama, kaygıyla baş edebilme ve davranışsal hazır bulunuşluk.</li>
-                        </ul>
-                        <p>Ergoterapi; çocuğun nörolojik ve gelişimsel ihtiyacına odaklanarak, kalıcı bir tuvalet bağımsızlığı için gerekli altyapıyı ve özgüveni inşa eder.</p>
+                        <!-- 2. Ne Zaman ve Nasıl Gelişir? -->
+                        <section class="space-y-3">
+                            <h3 class="font-serif text-xl font-bold text-sage-800 border-b border-cream-200 pb-2">2. Tuvalet Becerisi Ne Zaman ve Nasıl Gelişir?</h3>
+                            <p class="text-sm sm:text-base text-charcoal/80 leading-relaxed">
+                                Tuvalet farkındalığı çocuklarda genellikle 18 ile 36. aylar arasında şekillenmeye başlar. Ancak bu alışkanlığı kazanmak, sadece maddelerin üzerini çizdiğimiz bir kontrol listesi değildir; fiziksel, bilişsel, iletişimsel, duygusal ve duyusal sistemlerin karmaşık bir etkileşimidir. Ergoterapistler olarak tuvalet kullanımını önemli bir günlük yaşam aktivitesi olarak görür ve sürece bütüncül yaklaşırız.
+                            </p>
+                            <p class="text-sm sm:text-base text-charcoal/80 font-semibold pt-1">
+                                Bizim için hazır oluşluk gelişimsel ipuçlarına bağlıdır. Bu süreçte şu faktörleri değerlendiririz:
+                            </p>
+                            <ul class="list-disc pl-5 text-sm sm:text-base text-charcoal/80 space-y-2">
+                                <li><strong>İnterosepsiyon:</strong> Çocuğun çiş veya kaka ihtiyacı gibi vücudunun içerisinden gelen sinyalleri fark edebilme yeteneği.</li>
+                                <li><strong>İletişim ve İfade Becerileri:</strong> Çocuğun ihtiyacını sözel olarak dile getirmesi ya da jest, mimik ve beden diliyle (tuvalete yönelme, bacaklarını çaprazlama, bezini çekiştirme vb.) çevresine aktarabilmesi.</li>
+                                <li><strong>Motor Beceriler:</strong> Pantolon indirme/çekme (ince motor), klozette dengede güvenle oturma (kaba motor) ve genital bölge temizliği (bilateral entegrasyon).</li>
+                                <li><strong>Duyusal İşlemleme:</strong> Tuvalet ortamındaki dokulara, klozet soğukluğuna, sifon sesine veya kokulara karşı artmış ya da azalmış tepki.</li>
+                                <li><strong>Duygusal Düzenleme:</strong> Süreçteki değişimlere uyum sağlama, kaygıyla baş edebilme ve davranışsal hazır bulunuşluk.</li>
+                            </ul>
+                            <div class="bg-cream-100 p-4 rounded-xl border border-cream-200 mt-2">
+                                <p class="text-xs sm:text-sm text-sage-800 font-medium">
+                                    💡 <strong>Ergoterapi Yaklaşımı:</strong> Çocuğun nörolojik ve gelişimsel ihtiyacına odaklanarak, kalıcı bir tuvalet bağımsızlığı için gerekli altyapıyı ve özgüveni inşa eder.
+                                </p>
+                            </div>
+                        </section>
 
-                        <h3 class="font-serif text-xl font-bold text-sage-800 pt-2">3. Kaka Tutma</h3>
-                        <p>Çocuğun kakasını günlerce ertelemesi veya bilinçli/bilinçsiz olarak tutmasıdır.</p>
-                        <p><strong>Ergoterapi Açısı:</strong> Dışkı tutulduğunda kolonda sıvı emilerek sertleşir ve boşaltım esnasında anal bölgede aşırı taktil uyarana (ağrı/fissür) yol açar; çocuk bu ağrılı deneyimi nöroseptif bir tehdit algısı olarak hafızaya kaydederek bir kaçınma döngüsü oluşturur. Ayrıca bazı çocuklar bağırsağın peristaltik hareketleri sırasında oluşan yoğun propriyoseptif ve interoseptif baskıyı bir tür öz-düzenleme (self-regulation) stratejisi olarak kullanır ve oluşan bu derin basınç hissiyle kendilerini sakinleştirmeye çalışırlar. Interoseptif farkındalığı düşük olan çocuklar ise az miktardaki dışkı uyarısını hissedemediklerinden, ancak bağırsak duvarı aşırı gerildiğinde sinyali alabilirler; bu da kronik bir tutma davranışına dönüşür.</p>
+                        <!-- 3. Yaygın Tuvalet Problemleri -->
+                        <section class="space-y-4">
+                            <h3 class="font-serif text-xl font-bold text-sage-800 border-b border-cream-200 pb-2">3. Yaygın Tuvalet Problemleri: Neden Kaynaklanır?</h3>
+                            
+                            <div class="bg-cream-50 p-4 sm:p-5 rounded-2xl border border-cream-200 space-y-2">
+                                <h4 class="font-bold text-sage-800 text-base">📌 Kaka Tutma</h4>
+                                <p class="text-xs sm:text-sm text-charcoal/80 italic bg-white/70 p-2 rounded-lg border border-cream-200">
+                                    Çocuğun kakasını günlerce ertelemesi veya bilinçli/bilinçsiz olarak tutmasıdır.
+                                </p>
+                                <p class="text-xs sm:text-sm text-charcoal/80 leading-relaxed pt-1">
+                                    <strong>Ergoterapi Açısı:</strong> Dışkı tutulduğunda kolonda sıvı emilerek sertleşir ve boşaltım esnasında anal bölgede aşırı taktil uyarana (ağrı/fissür) yol açar; çocuk bu ağrılı deneyimi nöroseptif bir tehdit algısı olarak hafızaya kaydederek bir kaçınma döngüsü oluşturur. Ayrıca bazı çocuklar bağırsağın peristaltik hareketleri sırasında oluşan yoğun propriyoseptif ve interoseptif baskıyı bir tür öz-düzenleme (self-regulation) stratejisi olarak kullanır ve oluşan bu derin basınç hissiyle kendilerini sakinleştirmeye çalışırlar. İnteroseptif farkındalığı düşük olan çocuklar ise az miktardaki dışkı uyarısını hissedemediklerinden, ancak bağırsak duvarı aşırı gerildiğinde sinyali alabilirler; bu da kronik bir tutma davranışına dönüşür.
+                                </p>
+                            </div>
 
-                        <h3 class="font-serif text-xl font-bold text-sage-800 pt-2">4. Uygun Olmayan Alanlara Dışkılama</h3>
-                        <p>Çocuğun klozete yapmayı reddedip beze, halıya, pantolonuna, mobilya arkasına veya odanın bir köşesine dışkılamasıdır.</p>
-                        <p><strong>Ergoterapi Açısı:</strong> Klozette otururken ayakların boşta kalması vestibüler sistemde güvensizlik (gravitasyonel emniyetsizlik) yarattığı için çocuk yerle tam temas kurabildiği (ayakta durarak, çömelerek veya yatarak) alanlarda dışkılamayı tercih eder. Ayrıca dışkılama; pelvik taban kaslarının gevşemesini ve karın içi basınçla senkronize çalışmasını (motor planlama / praksis) gerektirdiğinden, anal bölgedeki gerilimi tolere edemeyen veya kas koordinasyonu zayıf olan çocuk yerçekiminin desteğini almak için ayakta veya yatarak dışkılamaya yönelir. Son olarak; banyonun duyusal uyaranları çocukta sempatik sinir sistemi uyarılmasına (savaş ya da kaç tepkisi) yol açtığından, çocuk boşaltım için duyusal olarak kendini güvende hissettiği uyarandan uzak alanları (perde arkası, odanın köşesi vb.) seçebilir.</p>
+                            <div class="bg-cream-50 p-4 sm:p-5 rounded-2xl border border-cream-200 space-y-2">
+                                <h4 class="font-bold text-sage-800 text-base">📌 Uygun Olmayan Alanlara Dışkılama</h4>
+                                <p class="text-xs sm:text-sm text-charcoal/80 italic bg-white/70 p-2 rounded-lg border border-cream-200">
+                                    Çocuğun klozete yapmayı reddedip beze, halıya, pantolonuna, mobilya arkasına veya odanın bir köşesine dışkılamasıdır.
+                                </p>
+                                <p class="text-xs sm:text-sm text-charcoal/80 leading-relaxed pt-1">
+                                    <strong>Ergoterapi Açısı:</strong> Klozette otururken ayakların boşta kalması vestibüler sistemde güvensizlik (gravitasyonel emniyetsizlik) yarattığı için çocuk yerle tam temas kurabildiği (ayakta durarak, çömelerek veya yatarak) alanlarda dışkılamayı tercih eder. Ayrıca dışkılama; pelvik taban kaslarının gevşemesini ve karın içi basınçla senkronize çalışmasını (motor planlama / praksis) gerektirdiğinden, anal bölgedeki gerilimi tolere edemeyen veya kas koordinasyonu zayıf olan çocuk yerçekiminin desteğini almak için ayakta veya yatarak dışkılamaya yönelir. Son olarak; banyonun duyusal uyaranları çocukta sempatik sinir sistemi uyarılmasına (savaş ya da kaç tepkisi) yol açtığından, çocuk boşaltım için duyusal olarak kendini güvende hissettiği uyarandan uzak alanları (perde arkası, odanın köşesi vb.) seçebilir.
+                                </p>
+                            </div>
+                        </section>
 
-                        <h3 class="font-serif text-xl font-bold text-sage-800 pt-2">5. Tuvalet Sürecini Kolaylaştıran Ergoterapi Stratejileri</h3>
-                        <p>Tuvalet bağımsızlığı adım adım inşa edilen bir süreçtir. Ergoterapide amacımız; çevreyi çocuğun ihtiyacına göre uyarlamak, duyusal süreçleri düzenlemek ve vücut farkındalığını artırmaktır. İşte evde uygulayabileceğiniz ergoterapi stratejileri:</p>
-                        
-                        <h4 class="font-semibold text-sage-700 pt-2">5.1. Banyo Ortamını ve Ekipmanları Uyarlamak</h4>
-                        <p>Postüral denge ve güvenlik için ayaklarının altına kaymaz bir tabure ya da basamak yerleştirin. Bu sayede doğal boşaltım pozisyonu sağlanmış olacaktır. Yanına tutunabileceği aparatlar eklemek ve yumuşak bir klozet redüktörü kullanmak postüral kontrolü destekler.</p>
-                        <p><strong>Duyusal Düzenleme:</strong> Ses hassasiyeti varsa banyoya sesi emen kalın havlular asabilir veya kulaklık/müzik kullanabilirsiniz. Işık seviyesini çocuğun toleransına göre ayarlayın; kokusuz, ılık ıslak mendil veya dokunsal aşırı yüklemeyi azaltacak araçlar tercih edin.</p>
+                        <!-- 4. Ergoterapi Stratejileri -->
+                        <section class="space-y-4">
+                            <h3 class="font-serif text-xl font-bold text-sage-800 border-b border-cream-200 pb-2">4. Tuvalet Sürecini Kolaylaştıran Ergoterapi Stratejileri</h3>
+                            <p class="text-sm sm:text-base text-charcoal/80 leading-relaxed">
+                                Tuvalet bağımsızlığı adım adım inşa edilen bir süreçtir. Ergoterapide amacımız; çevreyi çocuğun ihtiyacına göre uyarlamak, duyusal süreçleri düzenlemek ve vücut farkındalığını artırmaktır. İşte evde uygulayabileceğiniz ergoterapi stratejileri:
+                            </p>
+                            
+                            <div class="grid sm:grid-cols-2 gap-4 pt-2">
+                                <div class="bg-cream-50 p-4 rounded-xl border border-cream-200 space-y-2">
+                                    <h5 class="font-bold text-sage-800 text-sm flex items-center gap-1.5">🚿 Banyo Ortamı ve Ekipmanlar</h5>
+                                    <p class="text-xs text-charcoal/80 leading-relaxed">
+                                        Postüral denge ve güvenlik için ayaklarının altına kaymaz bir tabure/basamak yerleştirin. Yanına tutunabileceği aparatlar eklemek ve yumuşak bir klozet redüktörü kullanmak postüral kontrolü destekler.
+                                    </p>
+                                    <p class="text-xs text-charcoal/80 leading-relaxed pt-1">
+                                        <strong>Duyusal Düzenleme:</strong> Ses hassasiyeti varsa kalın havlular veya kulaklık tercih edin. Işık seviyesini ayarlayın; kokusuz ve ılık ıslak mendil kullanın.
+                                    </p>
+                                </div>
 
-                        <h4 class="font-semibold text-sage-700 pt-2">5.2. Vücut Farkındalığını (İnterosepsiyon ve Propriyosepsiyon) Geliştirmek</h4>
-                        <ul class="list-disc pl-5 space-y-1">
-                            <li><strong>Kas ve Sıkışma Hissi Egzersizleri:</strong> Karın içi basıncı ve pelvik kasları çalıştırmak için tuvalette veya öncesinde baloncuk üfleme oyunları oynayın.</li>
-                            <li><strong>Derin Basınç ve Yoga:</strong> Terapi topu üzerinde uzanma, duvarı itme, çocuk yogası ve minderler arasında sıkıştırılma gibi aktivitelerle derin duyuyu (propriyosepsiyon) uyararak çocuğun iç organ sinyallerini (interosepsiyon) beyinde işlemesini kolaylaştırın.</li>
-                            <li><strong>Model Olma:</strong> Kendi vücut duyumlarınızı "Şu an karnımda bir doluluk hissediyorum, tuvalete gitme zamanım geldi" şeklinde sözel olarak ifade ederek çocuğa model olun.</li>
-                        </ul>
+                                <div class="bg-cream-50 p-4 rounded-xl border border-cream-200 space-y-2">
+                                    <h5 class="font-bold text-sage-800 text-sm flex items-center gap-1.5">🧠 Vücut Farkındalığı</h5>
+                                    <p class="text-xs text-charcoal/80 leading-relaxed">
+                                        <strong>Kas & Sıkışma Hissi:</strong> Karın içi basıncı için baloncuk üfleme oyunları oynayın.
+                                    </p>
+                                    <p class="text-xs text-charcoal/80 leading-relaxed">
+                                        <strong>Derin Basınç & Yoga:</strong> Terapi topu, duvarı itme, minder arası sıkışma ile propriyosepsiyonu uyararak iç organ sinyallerinin beyinde işlenmesini kolaylaştırın.
+                                    </p>
+                                    <p class="text-xs text-charcoal/80 leading-relaxed">
+                                        <strong>Model Olma:</strong> "Karnımda bir doluluk var, tuvalete gitme zamanım geldi" diyerek model olun.
+                                    </p>
+                                </div>
 
-                        <h4 class="font-semibold text-sage-700 pt-2">5.3. Öz Bakım ve Hijyen Adımlarını Kolaylaştırmak (Silinme, Giyinme, Yıkama)</h4>
-                        <ul class="list-disc pl-5 space-y-1">
-                            <li><strong>Görevi Parçalara Ayırmak:</strong> Silinme ve giyinme süreçlerini tek bir büyük adım yerine parçalara bölün.</li>
-                            <li><strong>Görsel ve Motor Destekler:</strong> Çocuğun kıyafetini veya elini görebilmesi için banyoya boy aynası koyabilirsiniz. Bol ve elastik giysiler giyinmeyi kolaylaştırır.</li>
-                            <li><strong>El Yıkama Uyumlamaları:</strong> Sudan veya sabundan kaçınan çocuklar için suyun sıcaklığını ılık tutun. İçinde küçük bir oyuncak olan sabunlar veya görsel zamanlayıcılar kullanın; tolere edemediği durumlarda kademeli geçiş için bebek mendili veya dezenfektanla başlayın.</li>
-                        </ul>
+                                <div class="bg-cream-50 p-4 rounded-xl border border-cream-200 space-y-2">
+                                    <h5 class="font-bold text-sage-800 text-sm flex items-center gap-1.5">🧻 Öz Bakım ve Hijyen</h5>
+                                    <p class="text-xs text-charcoal/80 leading-relaxed">
+                                        <strong>Görevi Parçalara Ayırma:</strong> Silinme ve giyinme adımlarını bölün.
+                                    </p>
+                                    <p class="text-xs text-charcoal/80 leading-relaxed">
+                                        <strong>Görsel Destekler:</strong> Banyoya boy aynası koyun, bol elastik giysiler seçin.
+                                    </p>
+                                    <p class="text-xs text-charcoal/80 leading-relaxed">
+                                        <strong>El Yıkama:</strong> Ilık su kullanın; küçük oyuncaklı sabunlar veya zamanlayıcılarla eğlenceli hale getirin.
+                                    </p>
+                                </div>
 
-                        <h4 class="font-semibold text-sage-700 pt-2">5.4. Süreci Eğlenceli ve Görsel Hale Getirin</h4>
-                        <ul class="list-disc pl-5 space-y-1">
-                            <li><strong>Sosyal Öyküler ve Oyunlar:</strong> Rutin adımlarını gösteren görsel çizelgeler kullanın. Oyuncak bebeklerle tuvalet senaryolarını canlandırın, tuvalet becerisi ile ilgili resimli çocuk kitaplarından yararlanın.</li>
-                            <li><strong>Motivasyon Araçları:</strong> Erkek çocuklar için nişan alma topları, renk değiştiren banyo tabletleri, özel tuvalet şarkıları kullanabilirsiniz.</li>
-                        </ul>
+                                <div class="bg-cream-50 p-4 rounded-xl border border-cream-200 space-y-2">
+                                    <h5 class="font-bold text-sage-800 text-sm flex items-center gap-1.5">🎨 Görsel ve Eğlenceli Süreç</h5>
+                                    <p class="text-xs text-charcoal/80 leading-relaxed">
+                                        <strong>Sosyal Öyküler & Oyunlar:</strong> Rutin adımlarını gösteren görsel çizelgeler kullanın. Oyuncak bebeklerle senaryolar canlandırın ve resimli çocuk kitaplarından yararlanın.
+                                    </p>
+                                    <p class="text-xs text-charcoal/80 leading-relaxed">
+                                        <strong>Motivasyon Araçları:</strong> Erkek çocuklar için nişan alma topları, renk değiştiren banyo tabletleri ve özel tuvalet şarkıları kullanabilirsiniz.
+                                    </p>
+                                </div>
+                            </div>
+                        </section>
 
-                        <h3 class="font-serif text-xl font-bold text-sage-800 pt-2">6. Ne Zaman Bir Ergoterapiste Başvurmalısınız?</h3>
-                        <p>Tuvalet bağımsızlığı düz bir çizgi halinde ilerlemez; inişler ve duraksamalar bu yolculuğun doğal bir parçasıdır. Ancak doktor kontrollerinde fizyolojik bir neden bulunmamasına ve evdeki düzenlemelere rağmen süreç tıkandıysa, bu durum bir inatlaşma değil; çocuğun gelişimsel bir destek arayışıdır.</p>
-                        <p>Aşağıdaki durumlar devam ediyorsa bir ergoterapistten profesyonel değerlendirme almanız önerilir:</p>
-                        <ul class="list-disc pl-5 space-y-1">
-                            <li><strong>Tuvalet Reddi:</strong> Çocuğun banyoya girmekte veya klozete otururken panik ve ağlama krizleri yaşaması.</li>
-                            <li><strong>Kaka Tutma:</strong> Kakasını günlerce ertelemesi, sadece beze veya odanın köşesi gibi gizli alanlara dışkılamakta ısrar etmesi.</li>
-                            <li><strong>Duyusal İşlemleme Güçlükleri:</strong> Sifon sesine, banyo akustiğine, klozet soğukluğuna veya ıslaklık/sabun dokusuna katlanamaması.</li>
-                            <li><strong>Beden Sinyallerini Hissedememe (Zayıf İnterosepsiyon):</strong> Sıkışma hissini son raddeye kadar fark edemeyip sık sık gündüz kaçırmalarının devam etmesi.</li>
-                            <li><strong>Motor ve Öz Bakım Zorlukları:</strong> Pantolon indirme/çekme, klozette dengede durma (postüral güvensizlik) veya silinme adımlarında belirgin koordinasyon eksikliği.</li>
-                        </ul>
-                        <p class="pt-2 font-medium">Ergoterapi müdahalesi; çocuğun duyusal ve motor ihtiyaçlarını analiz ederek bu süreci bir kriz alanı olmaktan çıkarır ve çocuk için özgüvenli bir bağımsızlık kazanımına dönüştürür.</p>
+                        <!-- 5. Ne Zaman Ergoterapiste Başvurmalısınız? -->
+                        <section class="space-y-3 bg-sage-50 p-5 rounded-2xl border border-sage-100">
+                            <h3 class="font-serif text-xl font-bold text-sage-800 border-b border-sage-200 pb-2">5. Ne Zaman Bir Ergoterapiste Başvurmalısınız?</h3>
+                            <p class="text-xs sm:text-sm text-charcoal/80 leading-relaxed">
+                                Tuvalet bağımsızlığı düz bir çizgi halinde ilerlemez; inişler ve duraksamalar bu yolculuğun doğal bir parçasıdır. Ancak doktor kontrollerinde fizyolojik bir neden bulunmamasına ve evdeki düzenlemelere rağmen süreç tıkandıysa, bu durum bir inatlaşma değil; çocuğun gelişimsel bir destek arayışıdır.
+                            </p>
+                            <p class="text-xs sm:text-sm font-semibold text-sage-800 pt-1">Aşağıdaki durumlar devam ediyorsa bir ergoterapistten profesyonel değerlendirme almanız önerilir:</p>
+                            <ul class="list-disc pl-5 text-xs sm:text-sm text-charcoal/80 space-y-1.5">
+                                <li><strong>Tuvalet Reddi:</strong> Çocuğun banyoya girmekte veya klozete otururken panik ve ağlama krizleri yaşaması.</li>
+                                <li><strong>Kaka Tutma:</strong> Kakasını günlerce ertelemesi, sadece beze veya odanın köşesi gibi gizli alanlara dışkılamakta ısrar etmesi.</li>
+                                <li><strong>Duyusal İşlemleme Güçlükleri:</strong> Sifon sesine, banyo akustiğine, klozet soğukluğuna veya ıslaklık/sabun dokusuna katlanamaması.</li>
+                                <li><strong>Beden Sinyallerini Hissedememe (Zayıf İnterosepsiyon):</strong> Sıkışma hissini son raddeye kadar fark edemeyip sık sık gündüz kaçırmalarının devam etmesi.</li>
+                                <li><strong>Motor ve Öz Bakım Zorlukları:</strong> Pantolon indirme/çekme, klozette dengede durma (postüral güvensizlik) veya silinme adımlarında belirgin koordinasyon eksikliği.</li>
+                            </ul>
+                            <div class="pt-2">
+                                <p class="text-xs sm:text-sm text-sage-800 font-medium">
+                                    🌱 <strong>Ergoterapi müdahalesi;</strong> çocuğun duyusal ve motor ihtiyaçlarını analiz ederek bu süreci bir kriz alanı olmaktan çıkarır ve çocuk için özgüvenli bir bağımsızlık kazanımına dönüştürür.
+                                </p>
+                            </div>
+                        </section>
                     </div>
                 `
             },
