@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cansu Altun | Uzman Ergoterapist</title>
+    <meta name="description" content="Uzman Ergoterapist Cansu Altun'un duyu bütünleme, pediatrik ergoterapi, günlük yaşam becerileri ve çocuk gelişimi üzerine bilgilendirme sitesi.">
+    <meta name="robots" content="index, follow">
     
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -51,6 +53,12 @@
     </script>
 
     <style>
+        .line-clamp-3 {
+            display: -webkit-box;
+            -webkit-line-clamp: 3;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
         /* Swiper Özel Özelleştirmeleri */
         .swiper-pagination-bullet {
             width: 10px;
@@ -110,6 +118,7 @@
                 <a href="#hakkimda" class="text-sm font-medium text-charcoal/80 hover:text-sage-700 transition-colors">Hakkımda</a>
                 <a href="#uzmanliklar" class="text-sm font-medium text-charcoal/80 hover:text-sage-700 transition-colors">Uzmanlık Alanları</a>
                 <a href="#sertifikalar" class="text-sm font-medium text-charcoal/80 hover:text-sage-700 transition-colors">Sertifikalar</a>
+                <a href="#yorumlar" class="text-sm font-medium text-charcoal/80 hover:text-sage-700 transition-colors">Danışan Yorumları</a>
                 <a href="#yazilarim" class="text-sm font-medium text-sage-700 font-semibold hover:text-terracotta-500 transition-colors">Yazılarım</a>
                 <a href="#sss" class="text-sm font-medium text-charcoal/80 hover:text-sage-700 transition-colors">SSS</a>
             </nav>
@@ -136,6 +145,7 @@
             <a href="#hakkimda" class="mobile-link block text-base font-medium text-charcoal hover:text-sage-700">Hakkımda</a>
             <a href="#uzmanliklar" class="mobile-link block text-base font-medium text-charcoal hover:text-sage-700">Uzmanlık Alanları</a>
             <a href="#sertifikalar" class="mobile-link block text-base font-medium text-charcoal hover:text-sage-700">Sertifikalar</a>
+            <a href="#yorumlar" class="mobile-link block text-base font-medium text-charcoal hover:text-sage-700">Danışan Yorumları</a>
             <a href="#yazilarim" class="mobile-link block text-base font-semibold text-sage-700 hover:text-terracotta-500">Yazılarım & Blog</a>
             <a href="#sss" class="mobile-link block text-base font-medium text-charcoal hover:text-sage-700">Sıkça Sorulan Sorular</a>
             <a href="#iletisim" class="mobile-link inline-block w-full text-center px-5 py-3 rounded-full text-sm font-semibold bg-sage-700 text-white">İletişim & Bilgi</a>
@@ -143,55 +153,37 @@
     </header>
 
     <main class="pt-20">
-
         <!-- HERO (GİRİŞ) BÖLÜMÜ -->
-        <section id="anasayfa" class="relative overflow-hidden py-20 lg:py-28 bg-gradient-to-b from-cream-100/60 to-cream-50">
+        <section id="anasayfa" class="relative overflow-hidden py-16 lg:py-24 bg-gradient-to-b from-cream-100/60 to-cream-50">
+            <div class="absolute -top-28 -right-28 w-96 h-96 rounded-full bg-sage-100/70 blur-3xl"></div>
+            <div class="absolute -bottom-32 -left-32 w-80 h-80 rounded-full bg-terracotta-500/10 blur-3xl"></div>
             <div class="max-w-7xl mx-auto px-6 relative z-10">
-                <div class="max-w-3xl mx-auto text-center space-y-6">
-                    <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-sage-100/80 border border-sage-500/20 text-sage-800 text-xs font-semibold tracking-wider uppercase">
-                        BÜTÜNCÜL ERGOTERAPİ & GELİŞİMSEL TERAPİ
+                <div class="grid lg:grid-cols-[1.08fr_0.92fr] gap-12 lg:gap-16 items-center">
+                    <div class="space-y-7 text-center lg:text-left">
+                        <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-sage-100/80 border border-sage-500/20 text-sage-800 text-xs font-semibold tracking-wider uppercase">Bütüncül Ergoterapi & Gelişimsel Terapi</div>
+                        <h1 class="font-serif text-4xl sm:text-5xl md:text-6xl font-bold text-sage-800 leading-[1.08]">Anlamlı Becerilerle Güçlenen,<span class="block italic font-normal text-terracotta-500 mt-2">Bağımsız ve Dengeli</span>Bir Yaşam</h1>
+                        <p class="text-base sm:text-lg text-charcoal/75 leading-relaxed max-w-2xl mx-auto lg:mx-0">Ergoterapi; bireylerin günlük yaşamda karşılaştığı zorlukları aşmalarını, duyusal süreçlerini düzenlemelerini ve yaşam becerilerini geliştirmelerini destekleyen kişi odaklı bir sağlık disiplinidir.</p>
+                        <div class="flex flex-wrap items-center justify-center lg:justify-start gap-4">
+                            <a href="#ergoterapi-nedir" class="px-7 py-3.5 rounded-full bg-sage-700 text-white font-semibold text-sm hover:bg-sage-800 transition-all shadow-md hover:shadow-lg">Ergoterapiyi Keşfedin ↓</a>
+                            <a href="#hakkimda" class="px-7 py-3.5 rounded-full bg-white text-sage-800 border border-cream-300 font-semibold text-sm hover:bg-cream-100 transition-all">Cansu Altun Hakkında</a>
+                        </div>
+                        <div class="grid grid-cols-2 sm:grid-cols-3 gap-3 pt-5">
+                            <div class="p-4 bg-white/70 rounded-2xl border border-cream-200 text-left"><span class="block text-xs uppercase tracking-wider text-sage-600 font-bold">Yaklaşım</span><span class="block mt-1 text-sm font-semibold">Kişiye Özel</span></div>
+                            <div class="p-4 bg-white/70 rounded-2xl border border-cream-200 text-left"><span class="block text-xs uppercase tracking-wider text-sage-600 font-bold">Çalışma Alanı</span><span class="block mt-1 text-sm font-semibold">Çocuk & Gelişim</span></div>
+                            <div class="col-span-2 sm:col-span-1 p-4 bg-white/70 rounded-2xl border border-cream-200 text-left"><span class="block text-xs uppercase tracking-wider text-sage-600 font-bold">Konum</span><span class="block mt-1 text-sm font-semibold">İstanbul</span></div>
+                        </div>
                     </div>
-                    
-                    <h1 class="font-serif text-4xl sm:text-5xl md:text-6xl font-bold text-sage-800 leading-tight">
-                        Anlamlı Becerilerle Güçlenen, <br>
-                        <span class="italic font-normal text-terracotta-500">Bağımsız ve Dengeli</span> Bir Yaşam.
-                    </h1>
-
-                    <p class="text-base sm:text-lg text-charcoal/75 font-normal leading-relaxed max-w-2xl mx-auto">
-                        Ergoterapi; bireylerin günlük yaşamda karşılaştığı zorlukları aşmalarını, duyu bütünleme süreçlerini düzenlemelerini ve potansiyellerini en üst seviyede yaşamalarına destek olan bilimsel ve kişi odaklı bir disiplindir.
-                    </p>
-
-                    <div class="pt-4 flex flex-wrap items-center justify-center gap-4">
-                        <a href="#ergoterapi-nedir" class="px-7 py-3.5 rounded-full bg-sage-700 text-white font-semibold text-sm hover:bg-sage-800 transition-all shadow-md hover:shadow-lg">
-                            Ergoterapiyi Keşfedin ↓
-                        </a>
-                        <a href="#uzmanliklar" class="px-7 py-3.5 rounded-full bg-white text-sage-800 border border-cream-300 font-semibold text-sm hover:bg-cream-100 transition-all">
-                            Uzmanlık Alanlarım
-                        </a>
-                    </div>
-
-                    <!-- Özet Rozetler -->
-                    <div class="grid grid-cols-2 sm:grid-cols-4 gap-4 pt-12 text-left border-t border-cream-200/80 mt-12">
-                        <div class="p-3 bg-white/60 rounded-xl border border-cream-200">
-                            <span class="block text-xs uppercase tracking-wider text-sage-600 font-bold">Yaklaşım</span>
-                            <span class="text-sm font-semibold text-charcoal">Kişiye Özel & Bütüncül</span>
-                        </div>
-                        <div class="p-3 bg-white/60 rounded-xl border border-cream-200">
-                            <span class="block text-xs uppercase tracking-wider text-sage-600 font-bold">Odak Alanı</span>
-                            <span class="text-sm font-semibold text-charcoal">Duyu & Gelişim</span>
-                        </div>
-                        <div class="p-3 bg-white/60 rounded-xl border border-cream-200">
-                            <span class="block text-xs uppercase tracking-wider text-sage-600 font-bold">Metodoloji</span>
-                            <span class="text-sm font-semibold text-charcoal">Kanıta Dayalı Terapi</span>
-                        </div>
-                        <div class="p-3 bg-white/60 rounded-xl border border-cream-200">
-                            <span class="block text-xs uppercase tracking-wider text-sage-600 font-bold">Hedef Kitle</span>
-                            <span class="text-sm font-semibold text-charcoal">Çocuk, Ergen & Aile</span>
+                    <div class="relative max-w-md mx-auto lg:max-w-none">
+                        <div class="absolute -inset-4 bg-sage-100 rounded-[2.5rem] rotate-3"></div>
+                        <div class="relative overflow-hidden rounded-[2.25rem] border-8 border-white shadow-xl bg-cream-100">
+                            <img src="images/cansu-altun.jpg" alt="Cansu Altun" class="w-full h-[520px] sm:h-[620px] lg:h-[650px] object-cover object-top">
+                            <div class="absolute inset-x-5 bottom-5"><div class="bg-white/90 backdrop-blur-md rounded-2xl px-5 py-4 border border-white/60 shadow-lg"><p class="font-serif text-2xl font-bold text-sage-800">Cansu Altun</p><p class="text-xs uppercase tracking-widest text-sage-600 font-semibold mt-1">Uzman Ergoterapist</p></div></div>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
+
 
         <!-- ERGOTERAPİ NEDİR? -->
         <section id="ergoterapi-nedir" class="py-20 bg-white">
@@ -256,50 +248,33 @@
                 </div>
             </div>
         </section>
-
         <!-- HAKKIMDA -->
         <section id="hakkimda" class="py-20 bg-cream-100/50 border-y border-cream-200">
-            <div class="max-w-5xl mx-auto px-6">
-                <div class="bg-white rounded-3xl p-8 sm:p-12 shadow-sm border border-cream-200 space-y-8">
-                    <div class="text-center max-w-2xl mx-auto space-y-3">
-                        <span class="text-xs font-bold tracking-widest text-terracotta-500 uppercase">Özgeçmiş & Yaklaşım</span>
-                        <h2 class="font-serif text-3xl sm:text-4xl font-bold text-sage-800">Cansu Altun Hakkında</h2>
-                        <div class="w-16 h-0.5 bg-sage-500 mx-auto rounded-full"></div>
-                    </div>
-
-                    <div class="prose prose-sage max-w-none text-charcoal/80 leading-relaxed space-y-4 text-sm sm:text-base">
-                        <p>
-                            Merhaba, ben <strong>Cansu Altun</strong>. Lisans eğitimimi Ergoterapi bölümünde tamamlayarak uzmanlığımı çocuk ve gelişmekte olan bireylerin bütüncül gelişim süreçleri üzerine yoğunlaştırdım.
-                        </p>
-                        <p>
-                            Mesleki pratiğimde temelde her bireyin biricik ve benzersiz olduğu prensibini benimsiyorum. Duyu Bütünleme Terapisi, Pediatrik Ergoterapi ve Gelişimsel Değerlendirme konularında aldığım uluslararası ve ulusal geçerliliğe sahip sertifikasyonlarla çocukların potansiyellerini açığa çıkarmalarına rehberlik ediyorum.
-                        </p>
-                        <p>
-                            Terapi süreçlerimde yalnızca çocukla değil; aile, okul ve yakın çevre ile sürekli iletişim halinde kalarak sürdürülebilir, günlük yaşama entegre edilebilir ve destekleyici bir yaklaşım sunuyorum.
-                        </p>
-                    </div>
-
-                    <!-- İlkeler -->
-                    <div class="grid sm:grid-cols-3 gap-6 pt-6 border-t border-cream-200">
-                        <div class="text-center space-y-2">
-                            <span class="text-2xl">🌱</span>
-                            <h4 class="font-serif font-bold text-sage-800">Sevgi & Güven Odaklı</h4>
-                            <p class="text-xs text-charcoal/70">Çocuğun kendini emniyette hissettiği terapi ortamı.</p>
+            <div class="max-w-6xl mx-auto px-6">
+                <div class="bg-white rounded-3xl p-6 sm:p-10 lg:p-12 shadow-sm border border-cream-200">
+                    <div class="grid lg:grid-cols-[0.8fr_1.2fr] gap-10 lg:gap-14 items-center">
+                        <div class="relative max-w-sm mx-auto lg:max-w-none">
+                            <div class="absolute -inset-3 rounded-[2rem] bg-sage-100 -rotate-3"></div>
+                            <img src="images/cansu-altun.jpg" alt="Cansu Altun" class="relative w-full h-[520px] object-cover object-top rounded-[1.75rem] shadow-lg">
                         </div>
-                        <div class="text-center space-y-2">
-                            <span class="text-2xl">🔍</span>
-                            <h4 class="font-serif font-bold text-sage-800">Bilimsel Yaklaşım</h4>
-                            <p class="text-xs text-charcoal/70">Güncel araştırmalara dayanan objektif değerlendirmeler.</p>
-                        </div>
-                        <div class="text-center space-y-2">
-                            <span class="text-2xl">🤝</span>
-                            <h4 class="font-serif font-bold text-sage-800">Aile İş Birliği</h4>
-                            <p class="text-xs text-charcoal/70">Evde uygulanabilir pratik rehberlik ve düzenli bilgi akışı.</p>
+                        <div class="space-y-7">
+                            <div class="space-y-3"><span class="text-xs font-bold tracking-widest text-terracotta-500 uppercase">Özgeçmiş & Yaklaşım</span><h2 class="font-serif text-3xl sm:text-4xl font-bold text-sage-800">Cansu Altun Hakkında</h2><div class="w-16 h-0.5 bg-sage-500 rounded-full"></div></div>
+                            <div class="text-charcoal/80 leading-relaxed space-y-4 text-sm sm:text-base">
+                                <p>Merhaba, ben <strong>Cansu Altun</strong>. Lisans eğitimimi Ergoterapi bölümünde tamamlayarak mesleki çalışmalarımı çocukların ve gelişmekte olan bireylerin bütüncül gelişim süreçleri üzerine yoğunlaştırdım.</p>
+                                <p>Mesleki pratiğimde her bireyin kendine özgü ihtiyaçları, güçlü yönleri ve gelişim ritmi olduğu yaklaşımını benimsiyorum. Değerlendirme ve terapi süreçlerini bireyin günlük yaşamına katılımını destekleyecek şekilde planlıyorum.</p>
+                                <p>Terapi sürecinde çocukla yapılan çalışmaların yanı sıra aile, okul ve yakın çevreyle kurulan iş birliğini de önemsiyorum. Amacım, kazanılan becerilerin günlük yaşama aktarılabildiği sürdürülebilir bir destek süreci sunmaktır.</p>
+                            </div>
+                            <div class="grid sm:grid-cols-3 gap-4 pt-5 border-t border-cream-200">
+                                <div class="p-4 bg-cream-50 rounded-xl border border-cream-200"><span class="text-xl">🌱</span><h3 class="font-serif font-bold text-sage-800 mt-2">Güven Odaklı</h3><p class="text-xs text-charcoal/70 mt-1">Bireyin ihtiyaçlarına duyarlı destekleyici yaklaşım.</p></div>
+                                <div class="p-4 bg-cream-50 rounded-xl border border-cream-200"><span class="text-xl">🔍</span><h3 class="font-serif font-bold text-sage-800 mt-2">Bilimsel</h3><p class="text-xs text-charcoal/70 mt-1">Değerlendirmeye dayalı planlama süreci.</p></div>
+                                <div class="p-4 bg-cream-50 rounded-xl border border-cream-200"><span class="text-xl">🤝</span><h3 class="font-serif font-bold text-sage-800 mt-2">İş Birlikçi</h3><p class="text-xs text-charcoal/70 mt-1">Aile ve yakın çevreyle düzenli iletişim.</p></div>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
+
 
         <!-- UZMANLIK ALANLARI -->
         <section id="uzmanliklar" class="py-20 bg-white">
@@ -405,6 +380,18 @@
             </div>
         </section>
 
+        <!-- DANIŞAN GERİ BİLDİRİMLERİ -->
+        <section id="yorumlar" class="py-20 bg-white border-t border-cream-200">
+            <div class="max-w-7xl mx-auto px-6">
+                <div class="text-center max-w-2xl mx-auto mb-14 space-y-3"><span class="text-xs font-bold tracking-widest text-terracotta-500 uppercase">Paylaşılan Deneyimler</span><h2 class="font-serif text-3xl sm:text-4xl font-bold text-sage-800">Danışan Geri Bildirimleri</h2><p class="text-sm text-charcoal/70">Paylaşım izni alınmış geri bildirimler, kişisel bilgiler maskelenerek yayımlanır.</p></div>
+                <div class="grid md:grid-cols-3 gap-6">
+                    <article class="group bg-cream-50 rounded-2xl p-7 border border-cream-200"><div class="text-terracotta-500 tracking-widest">★★★★★</div><p class="mt-5 text-sm text-charcoal/70 leading-relaxed italic">Paylaşım izni alınmış gerçek danışan geri bildirimi bu alana eklenecektir.</p><div class="mt-6 pt-4 border-t border-cream-200"><p class="font-semibold text-sage-800 text-sm">A**** K****</p><p class="text-xs text-charcoal/55 mt-1">Danışan yakını</p></div></article>
+                    <article class="group bg-cream-50 rounded-2xl p-7 border border-cream-200"><div class="text-terracotta-500 tracking-widest">★★★★★</div><p class="mt-5 text-sm text-charcoal/70 leading-relaxed italic">Paylaşım izni alınmış gerçek danışan geri bildirimi bu alana eklenecektir.</p><div class="mt-6 pt-4 border-t border-cream-200"><p class="font-semibold text-sage-800 text-sm">S**** D****</p><p class="text-xs text-charcoal/55 mt-1">Danışan yakını</p></div></article>
+                    <article class="group bg-cream-50 rounded-2xl p-7 border border-cream-200"><div class="text-terracotta-500 tracking-widest">★★★★★</div><p class="mt-5 text-sm text-charcoal/70 leading-relaxed italic">Paylaşım izni alınmış gerçek danışan geri bildirimi bu alana eklenecektir.</p><div class="mt-6 pt-4 border-t border-cream-200"><p class="font-semibold text-sage-800 text-sm">M**** Y****</p><p class="text-xs text-charcoal/55 mt-1">Danışan yakını</p></div></article>
+                </div>
+                <p class="text-center text-[11px] text-charcoal/50 mt-8">Kişisel bilgiler gizlilik amacıyla maskelenmiştir. Her bireyin destek süreci farklıdır.</p>
+            </div>
+        </section>
         <!-- YAZILARIM / BLOG (SLIDER & KAYDIRMALI GEÇİŞ BÖLÜMÜ) -->
         <section id="yazilarim" class="py-20 bg-white">
             <div class="max-w-7xl mx-auto px-6">
@@ -435,9 +422,9 @@
 
                         <!-- BLOG YAZISI 1 (GÜNCELLENEN YAZI) -->
                         <div class="swiper-slide">
-                            <article class="bg-cream-50 rounded-2xl overflow-hidden border border-cream-200 hover:shadow-lg transition-all h-full flex flex-col">
+                            <article class="group bg-cream-50 rounded-2xl overflow-hidden border border-cream-200 hover:shadow-lg transition-all h-full flex flex-col">
                                 <div class="relative h-48 bg-sage-100 overflow-hidden">
-                                    <img src="https://raw.githubusercontent.com/barisaltun34/ergoterapist-site/refs/heads/main/Gemini_Generated_Image_2ulub72ulub72ulu.jpg" alt="Tuvalet Becerisi" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                                    <img src="Gemini_Generated_Image_2ulub72ulub72ulu.jpg" alt="Tuvalet Becerisi" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
                                     <span class="absolute top-4 left-4 bg-white/90 backdrop-blur-sm text-sage-800 text-xs font-bold px-3 py-1 rounded-full border border-cream-200">Günlük Yaşam Aktiviteleri</span>
                                 </div>
                                 <div class="p-6 flex-1 flex flex-col justify-between space-y-4">
@@ -454,16 +441,14 @@
                                             Tuvalet becerisi; vücuttan gelen içsel sinyalleri fark etmeyi, hijyen adımlarını ve bağımsızlık kazanmayı kapsayan önemli bir günlük yaşam aktivitesidir. Nedenleri ve ergoterapi stratejilerini inceleyin.
                                         </p>
                                     </div>
-                                    <button onclick="openBlogModal(0)" class="text-xs font-bold text-sage-700 hover:text-terracotta-500 flex items-center gap-1 transition-colors pt-2 border-t border-cream-200">
-                                        Yazıyı Oku →
-                                    </button>
+                                    <a href="blog/tuvalet-becerisi.html" class="text-xs font-bold text-sage-700 hover:text-terracotta-500 flex items-center gap-1 transition-colors pt-2 border-t border-cream-200">Yazıyı Oku →</a>
                                 </div>
                             </article>
                         </div>
 
                         <!-- BLOG YAZISI 2 -->
                         <div class="swiper-slide">
-                            <article class="bg-cream-50 rounded-2xl overflow-hidden border border-cream-200 hover:shadow-lg transition-all h-full flex flex-col">
+                            <article class="group bg-cream-50 rounded-2xl overflow-hidden border border-cream-200 hover:shadow-lg transition-all h-full flex flex-col">
                                 <div class="relative h-48 bg-sage-100 overflow-hidden">
                                     <img src="https://images.unsplash.com/photo-1502086223501-7ea6ecd79368?auto=format&fit=crop&w=800&q=80" alt="İnce Motor Becerileri" class="w-full h-full object-cover">
                                     <span class="absolute top-4 left-4 bg-white/90 backdrop-blur-sm text-sage-800 text-xs font-bold px-3 py-1 rounded-full border border-cream-200">İnce Motor</span>
@@ -482,16 +467,14 @@
                                             Kalem tutma, makas kullanma ve düğme ilikleme gibi günlük becerileri geliştirmek için evde oyun hamuru ve mandallarla yapabileceğiniz eğlenceli egzersizler.
                                         </p>
                                     </div>
-                                    <button onclick="openBlogModal(1)" class="text-xs font-bold text-sage-700 hover:text-terracotta-500 flex items-center gap-1 transition-colors pt-2 border-t border-cream-200">
-                                        Yazıyı Oku →
-                                    </button>
+                                    <a href="blog/ince-motor.html" class="text-xs font-bold text-sage-700 hover:text-terracotta-500 flex items-center gap-1 transition-colors pt-2 border-t border-cream-200">Yazıyı Oku →</a>
                                 </div>
                             </article>
                         </div>
 
                         <!-- BLOG YAZISI 3 -->
                         <div class="swiper-slide">
-                            <article class="bg-cream-50 rounded-2xl overflow-hidden border border-cream-200 hover:shadow-lg transition-all h-full flex flex-col">
+                            <article class="group bg-cream-50 rounded-2xl overflow-hidden border border-cream-200 hover:shadow-lg transition-all h-full flex flex-col">
                                 <div class="relative h-48 bg-sage-100 overflow-hidden">
                                     <img src="https://images.unsplash.com/photo-1503676260728-1c00da094a0b?auto=format&fit=crop&w=800&q=80" alt="Okul Öncesi Ergoterapi" class="w-full h-full object-cover">
                                     <span class="absolute top-4 left-4 bg-white/90 backdrop-blur-sm text-sage-800 text-xs font-bold px-3 py-1 rounded-full border border-cream-200">Okul Öncesi</span>
@@ -510,16 +493,14 @@
                                             Okul olgunluğu sadece harfleri tanımak değildir. Öz düzenleme, dikkat süresi ve akran uyumu gibi temel alanların okul öncesinde nasıl desteklendiğini öğrenin.
                                         </p>
                                     </div>
-                                    <button onclick="openBlogModal(2)" class="text-xs font-bold text-sage-700 hover:text-terracotta-500 flex items-center gap-1 transition-colors pt-2 border-t border-cream-200">
-                                        Yazıyı Oku →
-                                    </button>
+                                    <a href="blog/okul-oncesi.html" class="text-xs font-bold text-sage-700 hover:text-terracotta-500 flex items-center gap-1 transition-colors pt-2 border-t border-cream-200">Yazıyı Oku →</a>
                                 </div>
                             </article>
                         </div>
 
                         <!-- BLOG YAZISI 4 (ŞABLON 1) -->
                         <div class="swiper-slide">
-                            <article class="bg-cream-50 rounded-2xl overflow-hidden border border-cream-200 hover:shadow-lg transition-all h-full flex flex-col">
+                            <article class="group bg-cream-50 rounded-2xl overflow-hidden border border-cream-200 hover:shadow-lg transition-all h-full flex flex-col">
                                 <div class="relative h-48 bg-sage-100 overflow-hidden flex items-center justify-center">
                                     <img src="https://images.unsplash.com/photo-1544717305-2782549b5136?auto=format&fit=crop&w=800&q=80" alt="Gelişim Takibi" class="w-full h-full object-cover">
                                     <span class="absolute top-4 left-4 bg-white/90 backdrop-blur-sm text-sage-800 text-xs font-bold px-3 py-1 rounded-full border border-cream-200">Çocuk Gelişimi</span>
@@ -538,16 +519,14 @@
                                             Yemek saatleri çatışmaya mı dönüşüyor? Ağız duyusal hassasiyetleri olan çocuklarda besin çeşidini artırma stratejileri.
                                         </p>
                                     </div>
-                                    <button onclick="openBlogModal(3)" class="text-xs font-bold text-sage-700 hover:text-terracotta-500 flex items-center gap-1 transition-colors pt-2 border-t border-cream-200">
-                                        Yazıyı Oku →
-                                    </button>
+                                    <span class="text-xs font-semibold text-charcoal/40 pt-2 border-t border-cream-200">Yazı hazırlanıyor</span>
                                 </div>
                             </article>
                         </div>
 
                         <!-- BLOG YAZISI 5 (ŞABLON 2) -->
                         <div class="swiper-slide">
-                            <article class="bg-cream-50 rounded-2xl overflow-hidden border border-cream-200 hover:shadow-lg transition-all h-full flex flex-col">
+                            <article class="group bg-cream-50 rounded-2xl overflow-hidden border border-cream-200 hover:shadow-lg transition-all h-full flex flex-col">
                                 <div class="relative h-48 bg-sage-100 overflow-hidden">
                                     <img src="https://images.unsplash.com/photo-1516627145497-ae6968895b74?auto=format&fit=crop&w=800&q=80" alt="Oyun Terapisi" class="w-full h-full object-cover">
                                     <span class="absolute top-4 left-4 bg-white/90 backdrop-blur-sm text-sage-800 text-xs font-bold px-3 py-1 rounded-full border border-cream-200">Oyun & Terapi</span>
@@ -566,16 +545,14 @@
                                             Oyun, çocuğun en doğal öğrenme ve ifade biçimidir. Ergoterapide oyunu terapötik bir araç olarak nasıl kullanıyoruz?
                                         </p>
                                     </div>
-                                    <button onclick="openBlogModal(4)" class="text-xs font-bold text-sage-700 hover:text-terracotta-500 flex items-center gap-1 transition-colors pt-2 border-t border-cream-200">
-                                        Yazıyı Oku →
-                                    </button>
+                                    <span class="text-xs font-semibold text-charcoal/40 pt-2 border-t border-cream-200">Yazı hazırlanıyor</span>
                                 </div>
                             </article>
                         </div>
 
                         <!-- BLOG YAZISI 6 (ŞABLON 3) -->
                         <div class="swiper-slide">
-                            <article class="bg-cream-50 rounded-2xl overflow-hidden border border-cream-200 hover:shadow-lg transition-all h-full flex flex-col">
+                            <article class="group bg-cream-50 rounded-2xl overflow-hidden border border-cream-200 hover:shadow-lg transition-all h-full flex flex-col">
                                 <div class="relative h-48 bg-sage-100 overflow-hidden">
                                     <img src="https://images.unsplash.com/photo-1513542789411-b6a5d4f31634?auto=format&fit=crop&w=800&q=80" alt="Dikkat ve Odaklanma" class="w-full h-full object-cover">
                                     <span class="absolute top-4 left-4 bg-white/90 backdrop-blur-sm text-sage-800 text-xs font-bold px-3 py-1 rounded-full border border-cream-200">Dikkat & Odak</span>
@@ -594,16 +571,14 @@
                                             Ders çalışma veya etkinlik alanındaki küçük duyusal değişikliklerle çocuğun dikkatini sürdürme kapasitesini artırın.
                                         </p>
                                     </div>
-                                    <button onclick="openBlogModal(5)" class="text-xs font-bold text-sage-700 hover:text-terracotta-500 flex items-center gap-1 transition-colors pt-2 border-t border-cream-200">
-                                        Yazıyı Oku →
-                                    </button>
+                                    <span class="text-xs font-semibold text-charcoal/40 pt-2 border-t border-cream-200">Yazı hazırlanıyor</span>
                                 </div>
                             </article>
                         </div>
 
                         <!-- BLOG YAZISI 7 (ŞABLON 4) -->
                         <div class="swiper-slide">
-                            <article class="bg-cream-50 rounded-2xl overflow-hidden border border-cream-200 hover:shadow-lg transition-all h-full flex flex-col">
+                            <article class="group bg-cream-50 rounded-2xl overflow-hidden border border-cream-200 hover:shadow-lg transition-all h-full flex flex-col">
                                 <div class="relative h-48 bg-sage-100 overflow-hidden">
                                     <img src="https://images.unsplash.com/photo-1509062522246-3755977927d7?auto=format&fit=crop&w=800&q=80" alt="Öz Bakım" class="w-full h-full object-cover">
                                     <span class="absolute top-4 left-4 bg-white/90 backdrop-blur-sm text-sage-800 text-xs font-bold px-3 py-1 rounded-full border border-cream-200">Öz Bakım</span>
@@ -622,16 +597,14 @@
                                             Çocuğunuzun kendi elbiselerini giyme, ayakkabı bağlama ve öz bakım rutinlerini kazanmasında izlenebilecek sıralı adımlar.
                                         </p>
                                     </div>
-                                    <button onclick="openBlogModal(6)" class="text-xs font-bold text-sage-700 hover:text-terracotta-500 flex items-center gap-1 transition-colors pt-2 border-t border-cream-200">
-                                        Yazıyı Oku →
-                                    </button>
+                                    <span class="text-xs font-semibold text-charcoal/40 pt-2 border-t border-cream-200">Yazı hazırlanıyor</span>
                                 </div>
                             </article>
                         </div>
 
                         <!-- BLOG YAZISI 8 (ŞABLON 5) -->
                         <div class="swiper-slide">
-                            <article class="bg-cream-50 rounded-2xl overflow-hidden border border-cream-200 hover:shadow-lg transition-all h-full flex flex-col">
+                            <article class="group bg-cream-50 rounded-2xl overflow-hidden border border-cream-200 hover:shadow-lg transition-all h-full flex flex-col">
                                 <div class="relative h-48 bg-sage-100 overflow-hidden">
                                     <img src="https://images.unsplash.com/photo-1516534775068-ba3e7458af70?auto=format&fit=crop&w=800&q=80" alt="Aile Rehberi" class="w-full h-full object-cover">
                                     <span class="absolute top-4 left-4 bg-white/90 backdrop-blur-sm text-sage-800 text-xs font-bold px-3 py-1 rounded-full border border-cream-200">Aile Rehberi</span>
@@ -650,16 +623,14 @@
                                             Çocuğunuzun gün içerisindeki duyusal ihtiyacına göre hazırlanan hareket ve sakinleşme molalarının detayları.
                                         </p>
                                     </div>
-                                    <button onclick="openBlogModal(7)" class="text-xs font-bold text-sage-700 hover:text-terracotta-500 flex items-center gap-1 transition-colors pt-2 border-t border-cream-200">
-                                        Yazıyı Oku →
-                                    </button>
+                                    <a href="blog/duyusal-diyet.html" class="text-xs font-bold text-sage-700 hover:text-terracotta-500 flex items-center gap-1 transition-colors pt-2 border-t border-cream-200">Yazıyı Oku →</a>
                                 </div>
                             </article>
                         </div>
 
                         <!-- BLOG YAZISI 9 (ŞABLON 6) -->
                         <div class="swiper-slide">
-                            <article class="bg-cream-50 rounded-2xl overflow-hidden border border-cream-200 hover:shadow-lg transition-all h-full flex flex-col">
+                            <article class="group bg-cream-50 rounded-2xl overflow-hidden border border-cream-200 hover:shadow-lg transition-all h-full flex flex-col">
                                 <div class="relative h-48 bg-sage-100 overflow-hidden">
                                     <img src="https://images.unsplash.com/photo-1472162072142-d544e73eebfb?auto=format&fit=crop&w=800&q=80" alt="Sosyal Beceriler" class="w-full h-full object-cover">
                                     <span class="absolute top-4 left-4 bg-white/90 backdrop-blur-sm text-sage-800 text-xs font-bold px-3 py-1 rounded-full border border-cream-200">Sosyal Gelişim</span>
@@ -678,9 +649,7 @@
                                             Öfke nöbetleri ve hayal kırıklığı anlarında çocuğunuza yardımcı olacak duygu düzenleme stratejileri.
                                         </p>
                                     </div>
-                                    <button onclick="openBlogModal(8)" class="text-xs font-bold text-sage-700 hover:text-terracotta-500 flex items-center gap-1 transition-colors pt-2 border-t border-cream-200">
-                                        Yazıyı Oku →
-                                    </button>
+                                    <span class="text-xs font-semibold text-charcoal/40 pt-2 border-t border-cream-200">Yazı hazırlanıyor</span>
                                 </div>
                             </article>
                         </div>
@@ -806,17 +775,6 @@
         </div>
     </footer>
 
-    <!-- BLOG OKUMA MODALİ (POP-UP READER) -->
-    <div id="blog-modal" class="fixed inset-0 z-50 hidden bg-black/60 backdrop-blur-sm flex items-center justify-center p-4">
-        <div class="bg-white rounded-3xl max-w-3xl w-full max-h-[90vh] overflow-y-auto border border-cream-200 shadow-2xl p-6 sm:p-10 relative space-y-6">
-            <button onclick="closeBlogModal()" class="absolute top-6 right-6 w-10 h-10 rounded-full bg-cream-100 text-charcoal hover:bg-terracotta-500 hover:text-white flex items-center justify-center font-bold transition-all z-10">
-                ✕
-            </button>
-            <div id="modal-content" class="space-y-4">
-                <!-- Dinamik içerik buraya yüklenecektir -->
-            </div>
-        </div>
-    </div>
 
     <!-- Swiper.js Javascript -->
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
@@ -879,276 +837,10 @@
             });
         });
 
-        // Blog İçerik Veritabanı
-        const blogData = [
-            {
-                title: "Tuvalet Becerisi ve Tuvalet Problemleri",
-                category: "Öz Bakım & Ergoterapi",
-                date: "21 Eylül 2026",
-                readTime: "6 dk okuma",
-                image: "https://raw.githubusercontent.com/barisaltun34/ergoterapist-site/refs/heads/main/Gemini_Generated_Image_2ulub72ulub72ulu.jpg",
-                content: `
-                    <div class="space-y-6">
-                        <!-- 1. Tuvalet Becerisi -->
-                        <section class="space-y-3">
-                            <h3 class="font-serif text-xl font-bold text-sage-800 border-b border-cream-200 pb-2">1. Tuvalet Becerisi</h3>
-                            <p class="text-sm sm:text-base text-charcoal/80 leading-relaxed">
-                                Tuvalet becerisi, çocuğun yalnızca idrarını veya dışkısını tuvalete yapmasını değil; vücudundan gelen içsel sinyalleri fark etmesini, bu ihtiyacı gidermek için uygun ortamı bulmasını, tuvaletini yapmaya hazırlanmasını ve sonrasında gerekli hijyen basamaklarını tamamlamasını kapsayan önemli bir günlük yaşam aktivitesidir.
-                            </p>
-                            <p class="text-sm sm:text-base text-charcoal/80 leading-relaxed">
-                                Bu süreç; tuvalet ihtiyacını fark etme, uygun zamanda tuvalete ulaşma, kıyafetleri çıkarma, tuvalete uygun şekilde oturma, tuvaleti yapma, tuvalet kâğıdını kullanma, sifonu çekme ve ellerini yıkayıp kurulama gibi birden fazla becerinin bir arada kullanılmasını gerektirir.
-                            </p>
-                            <p class="text-sm sm:text-base text-charcoal/80 leading-relaxed">
-                                Bu nedenle tuvalet becerisinin kazanılması, çocuğun yalnızca bir öz bakım becerisi edinmesi değil, özerklik ve bağımsızlık kazanması açısından da önemli bir gelişimsel basamaktır.
-                            </p>
-                        </section>
 
-                        <!-- 2. Ne Zaman ve Nasıl Gelişir? -->
-                        <section class="space-y-3">
-                            <h3 class="font-serif text-xl font-bold text-sage-800 border-b border-cream-200 pb-2">2. Tuvalet Becerisi Ne Zaman ve Nasıl Gelişir?</h3>
-                            <p class="text-sm sm:text-base text-charcoal/80 leading-relaxed">
-                                Tuvalet farkındalığı çocuklarda genellikle 18 ile 36. aylar arasında şekillenmeye başlar. Ancak bu alışkanlığı kazanmak, sadece maddelerin üzerini çizdiğimiz bir kontrol listesi değildir; fiziksel, bilişsel, iletişimsel, duygusal ve duyusal sistemlerin karmaşık bir etkileşimidir. Ergoterapistler olarak tuvalet kullanımını önemli bir günlük yaşam aktivitesi olarak görür ve sürece bütüncül yaklaşırız.
-                            </p>
-                            <p class="text-sm sm:text-base text-charcoal/80 font-semibold pt-1">
-                                Bizim için hazır oluşluk gelişimsel ipuçlarına bağlıdır. Bu süreçte şu faktörleri değerlendiririz:
-                            </p>
-                            <ul class="list-disc pl-5 text-sm sm:text-base text-charcoal/80 space-y-2">
-                                <li><strong>İnterosepsiyon:</strong> Çocuğun çiş veya kaka ihtiyacı gibi vücudunun içerisinden gelen sinyalleri fark edebilme yeteneği.</li>
-                                <li><strong>İletişim ve İfade Becerileri:</strong> Çocuğun ihtiyacını sözel olarak dile getirmesi ya da jest, mimik ve beden diliyle (tuvalete yönelme, bacaklarını çaprazlama, bezini çekiştirme vb.) çevresine aktarabilmesi.</li>
-                                <li><strong>Motor Beceriler:</strong> Pantolon indirme/çekme (ince motor), klozette dengede güvenle oturma (kaba motor) ve genital bölge temizliği (bilateral entegrasyon).</li>
-                                <li><strong>Duyusal İşlemleme:</strong> Tuvalet ortamındaki dokulara, klozet soğukluğuna, sifon sesine veya kokulara karşı artmış ya da azalmış tepki.</li>
-                                <li><strong>Duygusal Düzenleme:</strong> Süreçteki değişimlere uyum sağlama, kaygıyla baş edebilme ve davranışsal hazır bulunuşluk.</li>
-                            </ul>
-                            <div class="bg-cream-100 p-4 rounded-xl border border-cream-200 mt-2">
-                                <p class="text-xs sm:text-sm text-sage-800 font-medium">
-                                    💡 <strong>Ergoterapi Yaklaşımı:</strong> Çocuğun nörolojik ve gelişimsel ihtiyacına odaklanarak, kalıcı bir tuvalet bağımsızlığı için gerekli altyapıyı ve özgüveni inşa eder.
-                                </p>
-                            </div>
-                        </section>
-
-                        <!-- 3. Yaygın Tuvalet Problemleri -->
-                        <section class="space-y-4">
-                            <h3 class="font-serif text-xl font-bold text-sage-800 border-b border-cream-200 pb-2">3. Yaygın Tuvalet Problemleri: Neden Kaynaklanır?</h3>
-                            
-                            <div class="bg-cream-50 p-4 sm:p-5 rounded-2xl border border-cream-200 space-y-2">
-                                <h4 class="font-bold text-sage-800 text-base">📌 Kaka Tutma</h4>
-                                <p class="text-xs sm:text-sm text-charcoal/80 italic bg-white/70 p-2 rounded-lg border border-cream-200">
-                                    Çocuğun kakasını günlerce ertelemesi veya bilinçli/bilinçsiz olarak tutmasıdır.
-                                </p>
-                                <p class="text-xs sm:text-sm text-charcoal/80 leading-relaxed pt-1">
-                                    <strong>Ergoterapi Açısı:</strong> Dışkı tutulduğunda kolonda sıvı emilerek sertleşir ve boşaltım esnasında anal bölgede aşırı taktil uyarana (ağrı/fissür) yol açar; çocuk bu ağrılı deneyimi nöroseptif bir tehdit algısı olarak hafızaya kaydederek bir kaçınma döngüsü oluşturur. Ayrıca bazı çocuklar bağırsağın peristaltik hareketleri sırasında oluşan yoğun propriyoseptif ve interoseptif baskıyı bir tür öz-düzenleme (self-regulation) stratejisi olarak kullanır ve oluşan bu derin basınç hissiyle kendilerini sakinleştirmeye çalışırlar. İnteroseptif farkındalığı düşük olan çocuklar ise az miktardaki dışkı uyarısını hissedemediklerinden, ancak bağırsak duvarı aşırı gerildiğinde sinyali alabilirler; bu da kronik bir tutma davranışına dönüşür.
-                                </p>
-                            </div>
-
-                            <div class="bg-cream-50 p-4 sm:p-5 rounded-2xl border border-cream-200 space-y-2">
-                                <h4 class="font-bold text-sage-800 text-base">📌 Uygun Olmayan Alanlara Dışkılama</h4>
-                                <p class="text-xs sm:text-sm text-charcoal/80 italic bg-white/70 p-2 rounded-lg border border-cream-200">
-                                    Çocuğun klozete yapmayı reddedip beze, halıya, pantolonuna, mobilya arkasına veya odanın bir köşesine dışkılamasıdır.
-                                </p>
-                                <p class="text-xs sm:text-sm text-charcoal/80 leading-relaxed pt-1">
-                                    <strong>Ergoterapi Açısı:</strong> Klozette otururken ayakların boşta kalması vestibüler sistemde güvensizlik (gravitasyonel emniyetsizlik) yarattığı için çocuk yerle tam temas kurabildiği (ayakta durarak, çömelerek veya yatarak) alanlarda dışkılamayı tercih eder. Ayrıca dışkılama; pelvik taban kaslarının gevşemesini ve karın içi basınçla senkronize çalışmasını (motor planlama / praksis) gerektirdiğinden, anal bölgedeki gerilimi tolere edemeyen veya kas koordinasyonu zayıf olan çocuk yerçekiminin desteğini almak için ayakta veya yatarak dışkılamaya yönelir. Son olarak; banyonun duyusal uyaranları çocukta sempatik sinir sistemi uyarılmasına (savaş ya da kaç tepkisi) yol açtığından, çocuk boşaltım için duyusal olarak kendini güvende hissettiği uyarandan uzak alanları (perde arkası, odanın köşesi vb.) seçebilir.
-                                </p>
-                            </div>
-                        </section>
-
-                        <!-- 4. Ergoterapi Stratejileri -->
-                        <section class="space-y-4">
-                            <h3 class="font-serif text-xl font-bold text-sage-800 border-b border-cream-200 pb-2">4. Tuvalet Sürecini Kolaylaştıran Ergoterapi Stratejileri</h3>
-                            <p class="text-sm sm:text-base text-charcoal/80 leading-relaxed">
-                                Tuvalet bağımsızlığı adım adım inşa edilen bir süreçtir. Ergoterapide amacımız; çevreyi çocuğun ihtiyacına göre uyarlamak, duyusal süreçleri düzenlemek ve vücut farkındalığını artırmaktır. İşte evde uygulayabileceğiniz ergoterapi stratejileri:
-                            </p>
-                            
-                            <div class="grid sm:grid-cols-2 gap-4 pt-2">
-                                <div class="bg-cream-50 p-4 rounded-xl border border-cream-200 space-y-2">
-                                    <h5 class="font-bold text-sage-800 text-sm flex items-center gap-1.5">🚿 Banyo Ortamı ve Ekipmanlar</h5>
-                                    <p class="text-xs text-charcoal/80 leading-relaxed">
-                                        Postüral denge ve güvenlik için ayaklarının altına kaymaz bir tabure/basamak yerleştirin. Yanına tutunabileceği aparatlar eklemek ve yumuşak bir klozet redüktörü kullanmak postüral kontrolü destekler.
-                                    </p>
-                                    <p class="text-xs text-charcoal/80 leading-relaxed pt-1">
-                                        <strong>Duyusal Düzenleme:</strong> Ses hassasiyeti varsa kalın havlular veya kulaklık tercih edin. Işık seviyesini ayarlayın; kokusuz ve ılık ıslak mendil kullanın.
-                                    </p>
-                                </div>
-
-                                <div class="bg-cream-50 p-4 rounded-xl border border-cream-200 space-y-2">
-                                    <h5 class="font-bold text-sage-800 text-sm flex items-center gap-1.5">🧠 Vücut Farkındalığı</h5>
-                                    <p class="text-xs text-charcoal/80 leading-relaxed">
-                                        <strong>Kas & Sıkışma Hissi:</strong> Karın içi basıncı için baloncuk üfleme oyunları oynayın.
-                                    </p>
-                                    <p class="text-xs text-charcoal/80 leading-relaxed">
-                                        <strong>Derin Basınç & Yoga:</strong> Terapi topu, duvarı itme, minder arası sıkışma ile propriyosepsiyonu uyararak iç organ sinyallerinin beyinde işlenmesini kolaylaştırın.
-                                    </p>
-                                    <p class="text-xs text-charcoal/80 leading-relaxed">
-                                        <strong>Model Olma:</strong> "Karnımda bir doluluk var, tuvalete gitme zamanım geldi" diyerek model olun.
-                                    </p>
-                                </div>
-
-                                <div class="bg-cream-50 p-4 rounded-xl border border-cream-200 space-y-2">
-                                    <h5 class="font-bold text-sage-800 text-sm flex items-center gap-1.5">🧻 Öz Bakım ve Hijyen</h5>
-                                    <p class="text-xs text-charcoal/80 leading-relaxed">
-                                        <strong>Görevi Parçalara Ayırma:</strong> Silinme ve giyinme adımlarını bölün.
-                                    </p>
-                                    <p class="text-xs text-charcoal/80 leading-relaxed">
-                                        <strong>Görsel Destekler:</strong> Banyoya boy aynası koyun, bol elastik giysiler seçin.
-                                    </p>
-                                    <p class="text-xs text-charcoal/80 leading-relaxed">
-                                        <strong>El Yıkama:</strong> Ilık su kullanın; küçük oyuncaklı sabunlar veya zamanlayıcılarla eğlenceli hale getirin.
-                                    </p>
-                                </div>
-
-                                <div class="bg-cream-50 p-4 rounded-xl border border-cream-200 space-y-2">
-                                    <h5 class="font-bold text-sage-800 text-sm flex items-center gap-1.5">🎨 Görsel ve Eğlenceli Süreç</h5>
-                                    <p class="text-xs text-charcoal/80 leading-relaxed">
-                                        <strong>Sosyal Öyküler & Oyunlar:</strong> Rutin adımlarını gösteren görsel çizelgeler kullanın. Oyuncak bebeklerle senaryolar canlandırın ve resimli çocuk kitaplarından yararlanın.
-                                    </p>
-                                    <p class="text-xs text-charcoal/80 leading-relaxed">
-                                        <strong>Motivasyon Araçları:</strong> Erkek çocuklar için nişan alma topları, renk değiştiren banyo tabletleri ve özel tuvalet şarkıları kullanabilirsiniz.
-                                    </p>
-                                </div>
-                            </div>
-                        </section>
-
-                        <!-- 5. Ne Zaman Ergoterapiste Başvurmalısınız? -->
-                        <section class="space-y-3 bg-sage-50 p-5 rounded-2xl border border-sage-100">
-                            <h3 class="font-serif text-xl font-bold text-sage-800 border-b border-sage-200 pb-2">5. Ne Zaman Bir Ergoterapiste Başvurmalısınız?</h3>
-                            <p class="text-xs sm:text-sm text-charcoal/80 leading-relaxed">
-                                Tuvalet bağımsızlığı düz bir çizgi halinde ilerlemez; inişler ve duraksamalar bu yolculuğun doğal bir parçasıdır. Ancak doktor kontrollerinde fizyolojik bir neden bulunmamasına ve evdeki düzenlemelere rağmen süreç tıkandıysa, bu durum bir inatlaşma değil; çocuğun gelişimsel bir destek arayışıdır.
-                            </p>
-                            <p class="text-xs sm:text-sm font-semibold text-sage-800 pt-1">Aşağıdaki durumlar devam ediyorsa bir ergoterapistten profesyonel değerlendirme almanız önerilir:</p>
-                            <ul class="list-disc pl-5 text-xs sm:text-sm text-charcoal/80 space-y-1.5">
-                                <li><strong>Tuvalet Reddi:</strong> Çocuğun banyoya girmekte veya klozete otururken panik ve ağlama krizleri yaşaması.</li>
-                                <li><strong>Kaka Tutma:</strong> Kakasını günlerce ertelemesi, sadece beze veya odanın köşesi gibi gizli alanlara dışkılamakta ısrar etmesi.</li>
-                                <li><strong>Duyusal İşlemleme Güçlükleri:</strong> Sifon sesine, banyo akustiğine, klozet soğukluğuna veya ıslaklık/sabun dokusuna katlanamaması.</li>
-                                <li><strong>Beden Sinyallerini Hissedememe (Zayıf İnterosepsiyon):</strong> Sıkışma hissini son raddeye kadar fark edemeyip sık sık gündüz kaçırmalarının devam etmesi.</li>
-                                <li><strong>Motor ve Öz Bakım Zorlukları:</strong> Pantolon indirme/çekme, klozette dengede durma (postüral güvensizlik) veya silinme adımlarında belirgin koordinasyon eksikliği.</li>
-                            </ul>
-                            <div class="pt-2">
-                                <p class="text-xs sm:text-sm text-sage-800 font-medium">
-                                    🌱 <strong>Ergoterapi müdahalesi;</strong> çocuğun duyusal ve motor ihtiyaçlarını analiz ederek bu süreci bir kriz alanı olmaktan çıkarır ve çocuk için özgüvenli bir bağımsızlık kazanımına dönüştürür.
-                                </p>
-                            </div>
-                        </section>
-                    </div>
-                `
-            },
-            {
-                title: "İnce Motor Becerilerini Geliştirmenin 5 Eğlenceli Yolu",
-                category: "İnce Motor",
-                date: "10 Mart 2026",
-                readTime: "3 dk okuma",
-                image: "https://images.unsplash.com/photo-1502086223501-7ea6ecd79368?auto=format&fit=crop&w=800&q=80",
-                content: `
-                    <p class="text-sm sm:text-base text-charcoal/80 leading-relaxed">
-                        İnce motor beceriler, el ve parmaklardaki küçük kasların koordinasyonunu ifade eder. Kalem tutma, düğme ilikleme ve makas kullanma bu becerilere dayanır.
-                    </p>
-                    <h4 class="font-serif text-xl font-bold text-sage-800 pt-2">Eğlenceli Egzersiz Önerileri:</h4>
-                    <ul class="list-disc pl-5 text-sm sm:text-base text-charcoal/80 space-y-2">
-                        <li>Oyun hamuru ile küçük toplar yuvarlamak ve cımbızla toplamak.</li>
-                        <li>Mandal takma-çıkarma yarışmaları yapmak.</li>
-                        <li>İpe boncuk veya makarna dizmek.</li>
-                    </ul>
-                `
-            },
-            {
-                title: "Okul Öncesi Dönemde Ergoterapinin Önemi ve Erken Müdahale",
-                category: "Okul Öncesi",
-                date: "02 Mart 2026",
-                readTime: "5 dk okuma",
-                image: "https://images.unsplash.com/photo-1503676260728-1c00da094a0b?auto=format&fit=crop&w=800&q=80",
-                content: `
-                    <p class="text-sm sm:text-base text-charcoal/80 leading-relaxed">
-                        Okul öncesi dönem, çocuğun motor, bilişsel ve duyusal gelişimi için kritik bir penceredir. Erken dönemde fark edilen duyusal veya motor güçlükler ergoterapi ile desteklendiğinde okul başarısı olumlu etkilenir.
-                    </p>
-                `
-            },
-            {
-                title: "Seçici Beslenme Yaşayan Çocuklara Duyu Temelli Yaklaşım",
-                category: "Çocuk Gelişimi",
-                date: "Yakında",
-                readTime: "3 dk okuma",
-                image: "https://images.unsplash.com/photo-1544717305-2782549b5136?auto=format&fit=crop&w=800&q=80",
-                content: `<p class="text-sm sm:text-base text-charcoal/80 leading-relaxed">Seçici beslenme konusundaki yeni makalemiz yakında yayınlanacaktır.</p>`
-            },
-            {
-                title: "Oyunun İyileştirici Gücü: Çocuk Terapisinde Oyunun Rolü",
-                category: "Oyun & Terapi",
-                date: "Yakında",
-                readTime: "4 dk okuma",
-                image: "https://images.unsplash.com/photo-1516627145497-ae6968895b74?auto=format&fit=crop&w=800&q=80",
-                content: `<p class="text-sm sm:text-base text-charcoal/80 leading-relaxed">Oyun terapisi üzerine hazırladığımız detaylı rehber yakında ekleniyor.</p>`
-            },
-            {
-                title: "Çocuklarda Odaklanma Süresini Artıran Çevresel Düzenlemeler",
-                category: "Dikkat & Odak",
-                date: "Yakında",
-                readTime: "4 dk okuma",
-                image: "https://images.unsplash.com/photo-1513542789411-b6a5d4f31634?auto=format&fit=crop&w=800&q=80",
-                content: `<p class="text-sm sm:text-base text-charcoal/80 leading-relaxed">Çevresel düzenleme rehberi yakında sizlerle.</p>`
-            },
-            {
-                title: "Giyinme Becerilerinde Bağımsızlık: Adım Adım Rehber",
-                category: "Öz Bakım",
-                date: "Yakında",
-                readTime: "3 dk okuma",
-                image: "https://images.unsplash.com/photo-1509062522246-3755977927d7?auto=format&fit=crop&w=800&q=80",
-                content: `<p class="text-sm sm:text-base text-charcoal/80 leading-relaxed">Öz bakım bağımsızlığı konulu makalemiz çok yakında burada.</p>`
-            },
-            {
-                title: "Evde Duyusal Diyet (Sensory Diet) Nasıl Uygulanır?",
-                category: "Aile Rehberi",
-                date: "Yakında",
-                readTime: "4 dk okuma",
-                image: "https://images.unsplash.com/photo-1516534775068-ba3e7458af70?auto=format&fit=crop&w=800&q=80",
-                content: `<p class="text-sm sm:text-base text-charcoal/80 leading-relaxed">Sensory diet rehberimiz hazırlanmaktadır.</p>`
-            },
-            {
-                title: "Akran İletişimi ve Duygu Düzenleme Becerileri",
-                category: "Sosyal Gelişim",
-                date: "Yakında",
-                readTime: "3 dk okuma",
-                image: "https://images.unsplash.com/photo-1472162072142-d544e73eebfb?auto=format&fit=crop&w=800&q=80",
-                content: `<p class="text-sm sm:text-base text-charcoal/80 leading-relaxed">Duygu düzenleme hakkındaki makalemiz çok yakında yayınlanacaktır.</p>`
-            }
-        ];
-
-        // Blog Modali Aç/Kapat
-        function openBlogModal(index) {
-            const data = blogData[index];
-            const modal = document.getElementById('blog-modal');
-            const content = document.getElementById('modal-content');
-
-            if (data) {
-                content.innerHTML = `
-                    <div class="space-y-4">
-                        <span class="inline-block bg-sage-100 text-sage-800 text-xs font-bold px-3 py-1 rounded-full">${data.category}</span>
-                        <h2 class="font-serif text-2xl sm:text-3xl font-bold text-sage-800">${data.title}</h2>
-                        <div class="flex items-center gap-4 text-xs text-charcoal/60 pb-2 border-b border-cream-200">
-                            <span>📅 ${data.date}</span>
-                            <span>•</span>
-                            <span>⏱️ ${data.readTime}</span>
-                            <span>•</span>
-                            <span>✍️ Cansu Altun</span>
-                        </div>
-                        <img src="${data.image}" class="w-full h-64 object-cover rounded-2xl my-4">
-                        <div class="prose max-w-none text-charcoal/80 space-y-4">
-                            ${data.content}
-                        </div>
-                    </div>
-                `;
-                modal.classList.remove('hidden');
-                document.body.style.overflow = 'hidden';
-            }
-        }
-
-        function closeBlogModal() {
-            const modal = document.getElementById('blog-modal');
-            modal.classList.add('hidden');
-            document.body.style.overflow = 'auto';
-        }
-
-        // Modal Dışına Tıklayınca Kapatma
-        document.getElementById('blog-modal').addEventListener('click', (e) => {
-            if (e.target.id === 'blog-modal') {
-                closeBlogModal();
+        document.addEventListener('click', (event) => {
+            if (!mobileMenu.contains(event.target) && !menuBtn.contains(event.target)) {
+                mobileMenu.classList.add('hidden');
             }
         });
     </script>
