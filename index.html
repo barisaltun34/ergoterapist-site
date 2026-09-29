@@ -763,6 +763,98 @@
 
     </main>
 
+<!-- AJAX BLOG MODAL -->
+<div
+    id="blog-modal"
+    class="fixed inset-0 z-[100] hidden"
+    role="dialog"
+    aria-modal="true"
+    aria-labelledby="blog-modal-title"
+>
+    <!-- Karartılmış arka plan -->
+    <div
+        id="blog-modal-overlay"
+        class="absolute inset-0 bg-charcoal/75 backdrop-blur-sm"
+    ></div>
+
+    <!-- Modal yerleşimi -->
+    <div class="relative z-10 flex min-h-full items-center justify-center p-3 sm:p-6">
+        <div
+            id="blog-modal-panel"
+            class="relative flex w-full max-w-5xl flex-col overflow-hidden rounded-2xl sm:rounded-3xl bg-cream-50 shadow-2xl max-h-[94vh]"
+        >
+            <!-- Modal üst alanı -->
+            <div class="flex flex-shrink-0 items-center justify-between gap-4 border-b border-cream-200 bg-cream-50/95 px-5 py-4 sm:px-7 backdrop-blur-md">
+                <div class="min-w-0">
+                    <span class="block text-[10px] font-bold uppercase tracking-widest text-terracotta-500">
+                        Yazılarım & Makaleler
+                    </span>
+
+                    <h2
+                        id="blog-modal-title"
+                        class="mt-1 truncate font-serif text-lg font-bold text-sage-800 sm:text-2xl"
+                    >
+                        Yazı yükleniyor...
+                    </h2>
+                </div>
+
+                <div class="flex flex-shrink-0 items-center gap-2">
+                    <!-- Yazıyı ayrı sayfada açma bağlantısı -->
+                    <a
+                        id="blog-full-page-link"
+                        href="#"
+                        class="hidden sm:inline-flex items-center justify-center rounded-full border border-cream-300 px-4 py-2 text-xs font-bold text-sage-700 transition-colors hover:border-sage-700 hover:bg-sage-700 hover:text-white"
+                    >
+                        Tam Sayfada Aç ↗
+                    </a>
+
+                    <!-- Kapatma butonu -->
+                    <button
+                        id="blog-modal-close"
+                        type="button"
+                        class="flex h-10 w-10 items-center justify-center rounded-full border border-cream-300 bg-white text-2xl leading-none text-sage-800 transition-colors hover:border-terracotta-500 hover:bg-terracotta-500 hover:text-white"
+                        aria-label="Yazıyı kapat"
+                    >
+                        ×
+                    </button>
+                </div>
+            </div>
+
+            <!-- AJAX ile gelen içerik -->
+            <div
+                id="blog-modal-scroll"
+                class="flex-1 overflow-y-auto overscroll-contain"
+            >
+                <div
+                    id="blog-modal-content"
+                    class="min-h-[300px]"
+                >
+                    <!-- Yükleme görünümü -->
+                    <div class="flex min-h-[300px] items-center justify-center p-8">
+                        <div class="text-center">
+                            <div class="mx-auto h-10 w-10 animate-spin rounded-full border-4 border-sage-100 border-t-sage-700"></div>
+                            <p class="mt-4 text-sm font-medium text-charcoal/60">
+                                Yazı yükleniyor...
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Mobil alt bağlantı -->
+            <div class="flex-shrink-0 border-t border-cream-200 bg-white px-5 py-3 sm:hidden">
+                <a
+                    id="blog-full-page-link-mobile"
+                    href="#"
+                    class="flex w-full items-center justify-center rounded-full bg-sage-700 px-5 py-3 text-xs font-bold text-white transition-colors hover:bg-sage-800"
+                >
+                    Yazıyı Tam Sayfada Aç ↗
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+
     <!-- FOOTER -->
     <footer class="bg-charcoal text-white/70 py-8 text-xs border-t border-charcoal/80">
         <div class="max-w-7xl mx-auto px-6 flex flex-col sm:flex-row items-center justify-between gap-4">
@@ -843,6 +935,354 @@
                 mobileMenu.classList.add('hidden');
             }
         });
+// =====================================================
+// AJAX BLOG MODAL SİSTEMİ
+// =====================================================
+
+const blogModal = document.getElementById('blog-modal');
+const blogModalPanel = document.getElementById('blog-modal-panel');
+const blogModalOverlay = document.getElementById('blog-modal-overlay');
+const blogModalClose = document.getElementById('blog-modal-close');
+const blogModalTitle = document.getElementById('blog-modal-title');
+const blogModalContent = document.getElementById('blog-modal-content');
+const blogModalScroll = document.getElementById('blog-modal-scroll');
+const blogFullPageLink = document.getElementById('blog-full-page-link');
+const blogFullPageLinkMobile = document.getElementById(
+    'blog-full-page-link-mobile'
+);
+
+// Modal kapandıktan sonra odağın geri döneceği bağlantı
+let lastClickedBlogLink = null;
+
+// Aktif AJAX isteğini gerektiğinde iptal etmek için
+let activeBlogRequest = null;
+
+/**
+ * Yükleme ekranını gösterir.
+ */
+function showBlogLoading() {
+    blogModalContent.innerHTML = `
+        <div class="flex min-h-[300px] items-center justify-center p-8">
+            <div class="text-center">
+                <div class="mx-auto h-10 w-10 animate-spin rounded-full border-4 border-sage-100 border-t-sage-700"></div>
+
+                <p class="mt-4 text-sm font-medium text-charcoal/60">
+                    Yazı yükleniyor...
+                </p>
+            </div>
+        </div>
+    `;
+}
+
+/**
+ * AJAX sırasında hata oluşursa gösterilecek alan.
+ */
+function showBlogError(blogUrl) {
+    blogModalTitle.textContent = 'Yazı yüklenemedi';
+
+    blogModalContent.innerHTML = `
+        <div class="flex min-h-[350px] items-center justify-center p-6 sm:p-10">
+            <div class="max-w-md text-center">
+                <div class="mx-auto flex h-16 w-16 items-center justify-center rounded-full bg-terracotta-500/10 text-3xl">
+                    !
+                </div>
+
+                <h3 class="mt-5 font-serif text-2xl font-bold text-sage-800">
+                    İçerik şu anda görüntülenemiyor
+                </h3>
+
+                <p class="mt-3 text-sm leading-relaxed text-charcoal/70">
+                    Yazı AJAX ile yüklenemedi. Yazıyı ayrı sayfada
+                    görüntülemeyi deneyebilirsiniz.
+                </p>
+
+                ${blogUrl}
+                    Yazıyı Tam Sayfada Aç ↗
+                </a>
+            </div>
+        </div>
+    `;
+}
+
+/**
+ * Blog dosyasındaki göreceli görsel ve bağlantı adreslerini düzeltir.
+ *
+ * Örnek:
+ * ../Gemini_Generated_Image.jpg
+ *
+ * Bu adres, blog dosyasının konumuna göre mutlak adrese dönüştürülür.
+ */
+function normalizeBlogUrls(articleElement, blogPageUrl) {
+    const elementsWithUrls = articleElement.querySelectorAll(
+        '[src], [href], [srcset]'
+    );
+
+    elementsWithUrls.forEach(element => {
+        if (element.hasAttribute('src')) {
+            const source = element.getAttribute('src');
+
+            if (
+                source &&
+                !source.startsWith('data:') &&
+                !source.startsWith('blob:')
+            ) {
+                element.setAttribute(
+                    'src',
+                    new URL(source, blogPageUrl).href
+                );
+            }
+        }
+
+        if (element.hasAttribute('href')) {
+            const href = element.getAttribute('href');
+
+            if (
+                href &&
+                !href.startsWith('#') &&
+                !href.startsWith('mailto:') &&
+                !href.startsWith('tel:') &&
+                !href.startsWith('javascript:')
+            ) {
+                element.setAttribute(
+                    'href',
+                    new URL(href, blogPageUrl).href
+                );
+            }
+        }
+
+        if (element.hasAttribute('srcset')) {
+            const srcset = element.getAttribute('srcset');
+
+            const normalizedSrcset = srcset
+                .split(',')
+                .map(item => {
+                    const srcsetPart = item.trim().split(/\s+/);
+                    const imageUrl = srcsetPart[0];
+                    const descriptor = srcsetPart.slice(1).join(' ');
+
+                    const absoluteImageUrl = new URL(
+                        imageUrl,
+                        blogPageUrl
+                    ).href;
+
+                    return descriptor
+                        ? `${absoluteImageUrl} ${descriptor}`
+                        : absoluteImageUrl;
+                })
+                .join(', ');
+
+            element.setAttribute('srcset', normalizedSrcset);
+        }
+    });
+}
+
+/**
+ * Modalı görünür hale getirir.
+ */
+function openBlogModal() {
+    blogModal.classList.remove('hidden');
+
+    // Modal açıkken ana sayfanın arkada kaymasını engeller
+    document.body.style.overflow = 'hidden';
+
+    // Modal içeriğini en üste getirir
+    blogModalScroll.scrollTop = 0;
+
+    // Erişilebilirlik için kapatma butonuna odaklanır
+    window.setTimeout(() => {
+        blogModalClose.focus();
+    }, 50);
+}
+
+/**
+ * Modalı kapatır.
+ */
+function closeBlogModal() {
+    // Devam eden AJAX isteği varsa iptal et
+    if (activeBlogRequest) {
+        activeBlogRequest.abort();
+        activeBlogRequest = null;
+    }
+
+    blogModal.classList.add('hidden');
+    document.body.style.overflow = '';
+
+    // Eski içeriğin kısa süre görünmesini engellemek için temizle
+    blogModalContent.innerHTML = '';
+    blogModalTitle.textContent = '';
+
+    // Kullanıcıyı tıkladığı blog bağlantısına geri götür
+    if (lastClickedBlogLink) {
+        lastClickedBlogLink.focus();
+    }
+}
+
+/**
+ * Blog dosyasını AJAX ile getirir ve yalnızca article bölümünü gösterir.
+ */
+async function loadBlogIntoModal(blogUrl, fallbackTitle = 'Yazılarım') {
+    // Önceki istek devam ediyorsa iptal et
+    if (activeBlogRequest) {
+        activeBlogRequest.abort();
+    }
+
+    activeBlogRequest = new AbortController();
+
+    blogModalTitle.textContent = fallbackTitle;
+    blogFullPageLink.href = blogUrl;
+    blogFullPageLinkMobile.href = blogUrl;
+
+    showBlogLoading();
+    openBlogModal();
+
+    try {
+        const response = await fetch(blogUrl, {
+            method: 'GET',
+            headers: {
+                Accept: 'text/html'
+            },
+            signal: activeBlogRequest.signal
+        });
+
+        if (!response.ok) {
+            throw new Error(
+                `Blog dosyası yüklenemedi. HTTP durum kodu: ${response.status}`
+            );
+        }
+
+        const htmlText = await response.text();
+
+        // Gelen HTML metnini güvenli şekilde ayrıştır
+        const parser = new DOMParser();
+        const blogDocument = parser.parseFromString(
+            htmlText,
+            'text/html'
+        );
+
+        // Blog sayfasının yalnızca article bölümünü al
+        const article = blogDocument.querySelector('main article');
+
+        if (!article) {
+            throw new Error(
+                'Blog dosyasında main article alanı bulunamadı.'
+            );
+        }
+
+        // Blog sayfasındaki gerçek başlığı al
+        const articleTitle = article.querySelector('h1');
+
+        if (articleTitle) {
+            blogModalTitle.textContent =
+                articleTitle.textContent.trim();
+        } else {
+            blogModalTitle.textContent = fallbackTitle;
+        }
+
+        /*
+         * fetch sonucundaki gerçek dosya adresi kullanılır.
+         * Böylece ../ ile başlayan görseller doğru şekilde bulunur.
+         */
+        normalizeBlogUrls(article, response.url);
+
+        /*
+         * Modalın kendi genişlik ve boşluk düzenini kullanacağımız için
+         * dış article sınıflarını kaldırıyoruz.
+         */
+        article.removeAttribute('class');
+
+        blogModalContent.innerHTML = `
+            <article class="mx-auto max-w-4xl px-5 py-8 sm:px-8 sm:py-10 lg:px-10">
+                ${article.innerHTML}
+            </article>
+        `;
+
+        blogModalScroll.scrollTop = 0;
+        activeBlogRequest = null;
+    } catch (error) {
+        /*
+         * Kullanıcı modalı kapattığı için istek iptal edildiyse
+         * hata ekranı göstermiyoruz.
+         */
+        if (error.name === 'AbortError') {
+            return;
+        }
+
+        console.error('Blog modal hatası:', error);
+        showBlogError(blogUrl);
+        activeBlogRequest = null;
+    }
+}
+
+/**
+ * index.html içinde blog klasörüne giden bütün HTML bağlantılarını yakalar.
+ *
+ * Böylece var olan bağlantıları button etiketine çevirmen gerekmez.
+ * JavaScript kapalıysa bağlantılar normal şekilde çalışmaya devam eder.
+ */
+document.querySelectorAll(
+    'a[href^="blog/"][href$=".html"]'
+).forEach(blogLink => {
+    blogLink.addEventListener('click', event => {
+        /*
+         * CTRL, CMD veya orta tuşla tıklama yapıldıysa kullanıcının
+         * yeni sekme açma davranışını engelleme.
+         */
+        if (
+            event.ctrlKey ||
+            event.metaKey ||
+            event.shiftKey ||
+            event.altKey ||
+            event.button !== 0
+        ) {
+            return;
+        }
+
+        event.preventDefault();
+
+        lastClickedBlogLink = blogLink;
+
+        const blogUrl = blogLink.getAttribute('href');
+
+        /*
+         * Kart başlığını bulup yükleme sırasında geçici başlık
+         * olarak kullanır.
+         */
+        const blogCard = blogLink.closest('article');
+        const cardTitle = blogCard
+            ? blogCard.querySelector('h3')
+            : null;
+
+        const fallbackTitle = cardTitle
+            ? cardTitle.textContent.trim()
+            : 'Yazılarım';
+
+        loadBlogIntoModal(blogUrl, fallbackTitle);
+    });
+});
+
+// X butonuna basınca kapat
+blogModalClose.addEventListener('click', closeBlogModal);
+
+// Karartılmış arka plana basınca kapat
+blogModalOverlay.addEventListener('click', closeBlogModal);
+
+// ESC tuşuna basınca kapat
+document.addEventListener('keydown', event => {
+    if (
+        event.key === 'Escape' &&
+        !blogModal.classList.contains('hidden')
+    ) {
+        closeBlogModal();
+    }
+});
+
+// Modal paneline tıklamayı arka plana iletme
+blogModalPanel.addEventListener('click', event => {
+    event.stopPropagation();
+});
+
+
+
     </script>
 </body>
 </html>
